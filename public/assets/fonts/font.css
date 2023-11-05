@@ -1,0 +1,49 @@
+
+@font-face {
+    font-family: 'PublicSans-SemiBold';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./PublicSans-SemiBold.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'PublicSans-Black';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./PublicSans-Black.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'PublicSans-Bold';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./PublicSans-Bold.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'PublicSans-Italic';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./PublicSans-Italic.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'PublicSans-Light';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./PublicSans-Light.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'PublicSans-Medium';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./PublicSans-Medium.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'PublicSans-Regular';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./PublicSans-Regular.ttf') format("truetype");
+}
