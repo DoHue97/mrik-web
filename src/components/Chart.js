@@ -18,17 +18,18 @@ function Chart(props) {
         '& .apexcharts-canvas': {
             // Tooltip
             '& .apexcharts-tooltip': {
+                backgroundColor: alpha(theme.palette.background.default, 0.8),
                 boxShadow: theme.palette.background.default,
                 color: theme.palette.text.primary,
                 boxShadow: theme.customShadows.dropdown,
                 borderRadius: theme.shape.borderRadius * 1.25,
                 '&.apexcharts-theme-light': {
                     borderColor: 'transparent',
-                    backgroundColor: alpha(theme.palette.background.default, 0.8),
+                    backgroundColor: theme.palette.background.default,
                 },
             },
             '& .apexcharts-xaxistooltip': {
-                backgroundColor: alpha(theme.palette.background.default, 0.8),
+                backgroundColor: theme.palette.background.default,
                 borderColor: 'transparent',
                 color: theme.palette.text.primary,
                 boxShadow: theme.customShadows.dropdown,
