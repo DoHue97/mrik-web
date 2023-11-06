@@ -5,11 +5,13 @@ import LoginPage from '../pages/login/LoginController';
 import HomePage from '../pages/home/HomeController';
 import DashboardPage from '../pages/dashboard/DashboardController';
 import UsersPage from '../pages/users/UsersController';
+import ForgotPasswordPage from "../pages/forgot-password/ForgotPasswordController";
 
 export default function Routers(props){
     return(
         <Routes>
             <Route exact path={config_path.login} element={<LoginPage />} />
+            <Route path={config_path.forgot_password} element={<ForgotPasswordPage />}/>
             <Route path={'/'} element={<DashboardPage />}/>
             <Route path={config_path.dashboard} element={<DashboardPage />}/>
             <Route path={config_path.users} element={<UsersPage />}/>

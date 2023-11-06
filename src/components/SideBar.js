@@ -57,7 +57,10 @@ export default function SideBar(props) {
         return (
             <Stack component={'nav'} spacing={0.5} sx={{ px: 2 }}>
                 {menu.map((item, index) => {
-                    const active = item.route == pathname;
+                    let active = item.route == pathname;
+                    if(item.route == '/dashboard' && pathname == '/'){
+                        active = true;
+                    }
                     return (
                         <MenuItem
                             key={index}
@@ -95,7 +98,7 @@ export default function SideBar(props) {
                 sx={{
                     height: 1,
                     '& .simplebar-content': {
-                        height: 1,
+                        // height: 1,
                         display: 'flex',
                         flexDirection: 'column',
                     },

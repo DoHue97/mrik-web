@@ -1,21 +1,19 @@
-import { Button, Grid, Typography, useTheme } from "@mui/material";
-import React, { useState } from "react";
-import { Field, Form } from 'react-final-form'
-import { TextFieldCustom } from "../../components/FormElements";
-import { EyeIcon, EyeOffIcon } from "../../components/Icons";
+import { Grid, Button, Typography, useTheme } from "@mui/material";
+import React from "react";
+import ContainerCustom from '../../components/Container';
 import validators from "../../utils/validators";
-import { config_path } from "../../router/config.path";
+import { TextFieldCustom } from "../../components/FormElements";
+import { Field, Form } from "react-final-form";
 import { useNavigate } from "react-router-dom";
+import { config_path } from "../../router/config.path";
 import { useTranslation } from "react-i18next";
-import ContainerCustom from "../../components/Container";
 
-export default function LoginView(props) {
+export default function ForgotPasswordView(props){
+    const navigate = useNavigate();
     const { t } = useTranslation();
     const theme = useTheme();
-    const navigate = useNavigate();
-    const [showPassword, setShowPassword] = useState(false)
 
-    return (
+    return(
         <ContainerCustom showProcessing={props.showProcessing} message={props.message} hideHeader={true} hideSideBar={true}>
             <Grid item xs={12} container justifyContent={'center'}>
                 <Grid item xs={12} sm={6} md={4} sx={{
@@ -25,7 +23,8 @@ export default function LoginView(props) {
                     py: 2,
                     borderRadius: 2
                 }}>
-                    <Typography variant="h4">{t('sign_in_desc')}</Typography>
+                    <Typography variant="h4">{t('forgot_password')}</Typography>
+                    <Typography variant="body2">{t('forgot_password_desc')}</Typography>
                     <Form
                         onSubmit={props.onSubmit}
                         render={({ handleSubmit }) => {
@@ -42,26 +41,11 @@ export default function LoginView(props) {
                                             validate={validators.composeValidators(validators.required, validators.validEmail)}
                                         />
                                     </Grid>
-                                    <Grid item xs={12}>
-                                        <Field
-                                            name="password"
-                                            label={t('password')}
-                                            component={TextFieldCustom}
-                                            type={showPassword ? 'text' : 'password'}
-                                            placeholder={t('enter_password')}
-                                            isEdit={true}
-                                            isValid={true}
-                                            endAdornment={<Grid item paddingTop={1} onClick={() => setShowPassword(!showPassword)}>
-                                                {showPassword ? <EyeIcon /> : <EyeOffIcon />}
-                                            </Grid>}
-                                            validate={validators.required}
-                                        />
-                                    </Grid>
                                     <Grid item xs={12} container justifyContent={'flex-end'} mt={1}>
-                                        <Button id='loginEmail/bntForgotPassword' onClick={() => navigate(config_path.forgot_password)} variant='text'>{t('forgot_password')}</Button>
+                                        <Button id='forgotPassword/bntLogin' onClick={() => navigate(config_path.login)} variant='text'>{t('btn_login')}</Button>
                                     </Grid>
                                     <Grid item xs={12} marginY={3}>
-                                        <Button id='loginEmail/btnSubmit' size="large" fullWidth variant='contained' onClick={handleSubmit} type='submit'>{t('btn_submit')}</Button>
+                                        <Button id='forgotPassword/btnSubmit' size="large" fullWidth variant='contained' onClick={handleSubmit} type='submit'>{t('btn_submit')}</Button>
                                     </Grid>
                                 </Grid>
                             )

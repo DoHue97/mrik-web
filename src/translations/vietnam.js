@@ -3,7 +3,7 @@ export const vietnam = {
     english: 'Tiếng Anh',
 
     //menu
-    dashboard: 'Dashboard',
+    dashboard: 'Tổng quan',
     products: 'Sản phẩm',
     home: 'Trang chủ',
     profile: 'Tài khoản',
@@ -13,6 +13,9 @@ export const vietnam = {
 
     welcome: 'Xin chào 👋',
 
+    //table
+    rows_per_page: 'Bản ghi mỗi trang',
+
     //buttons
     btn_submit: 'Gửi',
     btn_done: 'Xong',
@@ -21,6 +24,7 @@ export const vietnam = {
     btn_next: 'Tiếp theo',
     btn_edit: 'Sửa',
     btn_delete: 'Xóa',
+    btn_login: 'Đăng nhập',
 
     //login
     email: 'Email',
@@ -33,6 +37,10 @@ export const vietnam = {
     enter_valid_email: 'Vui lòng nhập đúng email',
     must_be_enter_number: 'Vui lòng nhập số',
 
+    //forgot password
+    forgot_password: 'Quên mật khẩu',
+    forgot_password_desc: 'Nhập email của bạn để lấy lại mật khẩu.',
+    
     //users
     name: 'Họ & Tên'
 }

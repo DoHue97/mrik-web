@@ -8,12 +8,12 @@ import Loading from './Loading';
 import SideBar from "./SideBar";
 
 function ContainerCustom(props) {
-    const { children, other, sx, message, showSideBar, showLoading, showHeader } = props;
+    const { children, other, sx, message, hideSideBar, showLoading, hideHeader } = props;
     const theme = useTheme();
 
     return (
         <>
-            {showHeader && <Header />}
+            {!hideHeader && <Header />}
             <Box
                 sx={{
                     minHeight: 1,
@@ -21,7 +21,7 @@ function ContainerCustom(props) {
                     flexDirection: { xs: 'column', lg: 'row' },
                 }}
             >
-                {showSideBar && <SideBar />}
+                {!hideSideBar && <SideBar />}
                 <Box component={"main"}
                     sx={{
                         flexGrow: 1,
@@ -52,12 +52,12 @@ function ContainerCustom(props) {
     )
 }
 
-ContainerCustom.propsTypes = {
+ContainerCustom.propTypes = {
     message: PropTypes.object,
-    showHeader: PropTypes.bool,
+    hideHeader: PropTypes.bool,
     showFooter: PropTypes.bool,
     showProcessing: PropTypes.bool,
-    showSideBar: PropTypes.bool,
+    hideSideBar: PropTypes.bool,
 }
 
 export default ContainerCustom;

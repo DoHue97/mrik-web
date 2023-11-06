@@ -7,19 +7,10 @@ import { DeleteIcon, EditIcon } from "../../components/Icons";
 import { useTranslation } from "react-i18next";
 
 export default function UsersView(props) {
+    const { users } = props;
     const { t } = useTranslation();
     const [openMenu, setOpenMenu] = useState(null);
 
-    const users = [
-        {
-            name: 'Hue Do 01',
-            email: 'dohue01@gmail.com',
-        },
-        {
-            name: 'Hue Do 02',
-            email: 'dohue02@gmail.com',
-        },
-    ]
     const menuActionItem = [
         { label: 'btn_edit', icon: <EditIcon />, onClick: props.onEdit, id: 'user_edit' },
         { label: 'btn_delete', icon: <DeleteIcon />, onClick: props.onDelete, id: 'user_delete' }
@@ -36,12 +27,16 @@ export default function UsersView(props) {
     }
 
     return (
-        <ContainerCustom showProcessing={props.showProcessing} message={props.message} showHeader={true} showFooter={true} showSideBar={true}>
+        <ContainerCustom showProcessing={props.showProcessing} message={props.message}>
             <Grid item xs={12}>
                 <DataTable
                     tableConfig={usersTableConfig}
-                    data={users}
+                    data={users.content}
+                    enablePaging={true}
+                    paging={users.paging}
                     onShowMenuActions={handleOpenMenu}
+                    handleChangeRowsPerPage={props.handleChangeRowsPerPage}
+                    handleChangePage={props.handleChangePage}
                 />
             </Grid>
             {menuActionItem && menuActionItem.length > 0 && <Popover id='menu-actions-users'

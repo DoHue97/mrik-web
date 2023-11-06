@@ -13,6 +13,9 @@ export const english = {
 
     welcome: 'Hi, Welcome back 👋',
 
+    //table
+    rows_per_page: 'Rows per page',
+
     //buttons
     btn_submit: 'Submit',
     btn_done: 'Done',
@@ -21,6 +24,7 @@ export const english = {
     btn_next: 'Next',
     btn_edit: 'Edit',
     btn_delete: 'Delete',
+    btn_login: 'Sign in',
 
     //login
     email: 'Email',
@@ -32,6 +36,10 @@ export const english = {
     required: 'Required',
     enter_valid_email: 'Please enter valid email',
     must_be_enter_number: 'Must be enter number',
+
+    //forgot password
+    forgot_password: 'Forgot password',
+    forgot_password_desc: 'Enter your email for reset password.',
 
     //users
     name: 'Name',

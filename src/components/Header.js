@@ -12,6 +12,8 @@ import { fToNow } from "../utils/utils";
 import { set, sub } from 'date-fns';
 import SideBar from "./SideBar";
 import { profile } from "../menu.config";
+import { useNavigate } from "react-router-dom";
+import { config_path } from "../router/config.path";
 
 const NOTIFICATIONS = [
     {
@@ -62,6 +64,7 @@ const NOTIFICATIONS = [
 ];
 
 function Header(props) {
+    const navigate = useNavigate();
     const { t } = useTranslation();
     const theme = useTheme();
     //sidebar menu
@@ -137,8 +140,12 @@ function Header(props) {
     const handleOpenProfile = (event) => {
         setOpenProfile(event.currentTarget)
     }
-    const handleCloseProfile = () => {
+    const handleCloseProfile = (target) => {
         setOpenProfile(null)
+        if(target == 'logout') onLogout()
+    }
+    const onLogout = () => {
+        navigate(config_path.login)
     }
     //#endregion
 
@@ -152,6 +159,7 @@ function Header(props) {
                     duration: theme.transitions.duration.shorter,
                 }),
                 backgroundColor: alpha(theme.palette.background.default, 0.8),
+                backdropFilter: 'blur(6px)',
                 [theme.breakpoints.up('lg')]: {
                     width: `calc(100% - ${NAV.WIDTH + 1}px)`,
                     height: HEADER.H_DESKTOP,
@@ -343,7 +351,7 @@ function Header(props) {
                                     <MenuItem
                                         disableRipple
                                         disableTouchRipple
-                                        onClick={handleCloseProfile}
+                                        onClick={() => handleCloseProfile('logout')}
                                         sx={{ typography: 'body2', color: 'error.main', py: 1.5 }}
                                     >
                                         {t('logout')}

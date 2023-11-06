@@ -19,6 +19,7 @@ function Chart(props) {
             // Tooltip
             '& .apexcharts-tooltip': {
                 backgroundColor: alpha(theme.palette.background.default, 0.8),
+                backdropFilter: 'blur(6px)',
                 boxShadow: theme.palette.background.default,
                 color: theme.palette.text.primary,
                 boxShadow: theme.customShadows.dropdown,
@@ -45,6 +46,7 @@ function Chart(props) {
                 textAlign: 'center',
                 fontWeight: theme.typography.fontWeightBold,
                 backgroundColor: alpha(theme.palette.grey[500], 0.08),
+                backdropFilter: 'blur(6px)',
                 color: theme.palette.text[theme.palette.mode === 'light' ? 'secondary' : 'primary'],
             },
             // LEGEND
@@ -278,6 +280,7 @@ function Chart(props) {
                         series={series}
                         options={merge(baseOptions, options)}
                         width="100%"
+                        height={280}
                     />
                     : <Box sx={{ p: 3, pb: 1 }}>
                         <Chart

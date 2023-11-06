@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { SortIcon } from './Icons';
 
 function DataTable(props) {
+    const { t } = useTranslation();
     const { tableConfig, enablePaging, paging } = props;
     const [order, setOrder] = useState('asc');
     const [rowsPerPage, setRowsPerPage] = React.useState(paging && paging.size ? paging.size : 10);
@@ -29,7 +30,7 @@ function DataTable(props) {
         props.handleChangeRowsPerPage(value);
     };
     return (
-        <TableContainer sx={{ marginTop: 1, backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05))', borderRadius: 4 }}>
+        <TableContainer sx={{ marginTop: 1, backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05))', borderRadius: 2 }}>
             <Table>
                 <EnhancedTableHead tableConfig={tableConfig} order={order} orderBy={orderBy} onRequestSort={handleRequestSort} />
                 <EnhancedTableContent {...props} order={order} orderBy={orderBy} />
@@ -38,6 +39,7 @@ function DataTable(props) {
                 {enablePaging && props.data.length > 0 && <TablePagination
                     component="div"
                     count={paging.total}
+                    labelRowsPerPage={t('rows_per_page')}
                     onPageChange={handleChangePage}
                     rowsPerPage={rowsPerPage}
                     page={paging.page ? paging.page - 1 : 0}

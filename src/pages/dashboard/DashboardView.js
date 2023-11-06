@@ -13,7 +13,7 @@ export default function DashboardView(props) {
 
 
     return (
-        <ContainerCustom message={props.message} showSideBar={true} showHeader={true} showProcessing={props.showProcessing}>
+        <ContainerCustom message={props.message} showProcessing={props.showProcessing}>
             <Container maxWidth="xl">
                 <Typography variant="h4" sx={{ mb: 5 }}>{t('welcome')}</Typography>
                 <Grid item container spacing={3}>

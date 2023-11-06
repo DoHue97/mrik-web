@@ -21,6 +21,7 @@ function Paging(props) {
             <TablePagination
                 component="div"
                 count={paging.total}
+                labelRowsPerPage={t('rows_per_page')}
                 onPageChange={handleChangePage}
                 rowsPerPage={rowsPerPage}
                 page={paging.page ? paging.page - 1 : 0}

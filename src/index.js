@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+// import './index.css';
 import SetupApp from './SetupApp';
 import reportWebVitals from './reportWebVitals';
 import { I18nextProvider } from "react-i18next";
 import i18n from './translations/i18n';
 import { BrowserRouter as Router } from 'react-router-dom';
+import 'simplebar-react/dist/simplebar.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
