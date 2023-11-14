@@ -2,9 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Dialog, DialogContent, DialogTitle, IconButton } from "@mui/material";
 import { CloseIcon } from "./Icons";
+import Alert from "./Alert";
 
 function Modal(props) {
-    const { isOpen, onClose, title, children, maxWidth, enableCloseButton } = props;
+    const { isOpen, onClose, title, children, maxWidth, enableCloseButton, message } = props;
 
     return (
         <Dialog
@@ -25,6 +26,12 @@ function Modal(props) {
             <DialogContent>
                 {children}
             </DialogContent>
+            {message && message.show && <Alert
+                isOpen={message.show}
+                message={message.content}
+                otherMessage={message.otherMessage ? message.otherMessage : null}
+                onClose={message.callBackFn}
+            />}
         </Dialog>
     )
 }
@@ -35,6 +42,7 @@ Modal.propTypes = {
     onClose: PropTypes.func,
     maxWidth: PropTypes.string,
     enableCloseButton: PropTypes.bool,
+    message: PropTypes.object,
 }
 
 export default Modal;

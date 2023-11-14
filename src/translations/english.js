@@ -30,6 +30,52 @@ export const english = {
     yes: 'Yes',
     no: 'No',
 
+    DAYS: {
+        MONDAY: 'Monday',
+        TUESDAY: 'Tuesday',
+        WEDNESDAY: 'Wednesday',
+        THURSDAY: 'Thursday',
+        FRIDAY: 'Friday',
+        SATURDAY: 'Saturday',
+        SUNDAY: 'Sunday'
+    }, 
+    SHORTDAYS: {
+        MONDAY: 'Mon',
+        TUESDAY: 'Tue',
+        WEDNESDAY: 'Wed',
+        THURSDAY: 'Thu',
+        FRIDAY: 'Fri',
+        SATURDAY: 'Sat',
+        SUNDAY: 'Sun'
+    },
+    SHORTMONTH: {
+        JAN: 'Jan'
+        , FEB: 'Feb'
+        , MAR: 'Mar'
+        , APR: 'Apr'
+        , MAY: 'May'
+        , JUN: 'Jun'
+        , JUL: 'Jul'
+        , AUG: 'Aug'
+        , SEP: 'Sept'
+        , OCT: 'Oct'
+        , NOV: 'Nov'
+        , DEC: 'Dec'
+    },
+    MONTH: {
+        JAN: 'January'
+        , FEB: 'February'
+        , MAR: 'March'
+        , APR: 'April'
+        , MAY: 'May'
+        , JUN: 'June'
+        , JUL: 'July'
+        , AUG: 'August'
+        , SEP: 'September'
+        , OCT: 'October'
+        , NOV: 'November'
+        , DEC: 'December'
+    },
     //login
     email: 'Email',
     password: 'Password',
@@ -49,4 +95,16 @@ export const english = {
     name: 'Name',
     add_user: 'Add User',
     edit_user: 'Edit User',
+    last_name: 'Last name',
+    middle_name: 'Middle name',
+    first_name: 'First name',
+    enter_first_name: 'Enter first name',
+    enter_middle_name: 'Enter middle name',
+    enter_last_name: 'Enter last name',
+    can_not_found_user: 'Can not found user.',
+
+    //orders
+    created_date: 'Created date',
+    number: 'Number',
+    state: 'State',
 }

@@ -217,7 +217,7 @@ function EnhancedTableContent(props) {
                         } else {
                             return (
                                 <TableCell key={index} align={cell.align}>
-                                    <Typography variant='subtitle2' sx={{ ...cell.customStyle, color: cell.customStyle && cell.customStyle.color ? palette[cell.customStyle.color].main : undefined }}>{formatValue}</Typography>
+                                    <Typography variant='body2' sx={{ ...cell.customStyle, color: cell.customStyle && cell.customStyle.color ? palette[cell.customStyle.color].main : undefined }}>{formatValue}</Typography>
                                 </TableCell>
                             )
                         }

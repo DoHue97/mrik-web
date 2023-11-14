@@ -26,3 +26,10 @@ export const usersTableConfig = [
     { key: 'email', label: 'email' },
     { key: '', label: '', align: align.right, action: true, actionIcon: MoreIcon, actionType: actionType.func, actionFuncName: 'onShowMenuActions' },
 ]
+
+export const ordersTableConfig = [
+    { key: 'created_date', label: 'created_date', type: valueType.datetime },
+    { key: 'number', label: 'number' },
+    { key: 'state', label: 'state' },
+    { key: '', label: '', align: align.right, action: true, actionIcon: MoreIcon, actionType: actionType.func, actionFuncName: 'onShowMenuActions' },
+]

@@ -30,6 +30,52 @@ export const vietnam = {
     yes: 'Đồng ý',
     no: 'Huỷ',
 
+    DAYS: {
+        MONDAY: 'Thứ 2',
+        TUESDAY: 'Thứ 3',
+        WEDNESDAY: 'Thứ 4',
+        THURSDAY: 'Thứ 5',
+        FRIDAY: 'Thứ 6',
+        SATURDAY: 'Thứ 7',
+        SUNDAY: 'Chủ nhật'
+    }, 
+    SHORTDAYS: {
+        MONDAY: 'T2',
+        TUESDAY: 'T3',
+        WEDNESDAY: 'T4',
+        THURSDAY: 'T5',
+        FRIDAY: 'T6',
+        SATURDAY: 'T7',
+        SUNDAY: 'CN'
+    },
+    SHORTMONTH: {
+        JAN: 'Th1'
+        , FEB: 'Th2'
+        , MAR: 'Th3'
+        , APR: 'Th4'
+        , MAY: 'Th5'
+        , JUN: 'Th6'
+        , JUL: 'Th7'
+        , AUG: 'Th8'
+        , SEP: 'Th9'
+        , OCT: 'Th10'
+        , NOV: 'Th11'
+        , DEC: 'Th12'
+    },
+    MONTH: {
+        JAN: 'Tháng 1'
+        , FEB: 'Tháng 2'
+        , MAR: 'Tháng 3'
+        , APR: 'Tháng 4'
+        , MAY: 'Tháng 5'
+        , JUN: 'Tháng 6'
+        , JUL: 'Tháng 7'
+        , AUG: 'Tháng 8'
+        , SEP: 'Tháng 9'
+        , OCT: 'Tháng 10'
+        , NOV: 'Tháng 11'
+        , DEC: 'Tháng 12'
+    },
     //login
     email: 'Email',
     password: 'Mật khẩu',
@@ -49,4 +95,16 @@ export const vietnam = {
     name: 'Họ & Tên',
     add_user: 'Thêm mới',
     edit_user: 'Sửa',
+    last_name: 'Tên',
+    middle_name: 'Đệm',
+    first_name: 'Họ',
+    enter_first_name: 'Nhập họ',
+    enter_middle_name: 'Nhập tên đệm',
+    enter_last_name: 'Nhập tên',
+    can_not_found_user: 'Tài khoản không tồn tại.',
+
+    //orders
+    created_date: 'Ngày tạo',
+    number: 'Số đơn hàng',
+    state: 'Trạng thái',
 }
