@@ -10,6 +10,8 @@ export const english = {
     settings: 'Settings',
     logout: 'Logout',
     users: 'Users',
+    orders: 'Orders',
+    wallet: 'Wallet',
 
     welcome: 'Hi, Welcome back 👋',
 
@@ -25,6 +27,8 @@ export const english = {
     btn_edit: 'Edit',
     btn_delete: 'Delete',
     btn_login: 'Sign in',
+    yes: 'Yes',
+    no: 'No',
 
     //login
     email: 'Email',
@@ -43,4 +47,6 @@ export const english = {
 
     //users
     name: 'Name',
+    add_user: 'Add User',
+    edit_user: 'Edit User',
 }

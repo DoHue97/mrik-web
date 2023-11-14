@@ -9,6 +9,7 @@ export const cache = {
     getCurrency,
     setCurrencyCode,
     getCurrencyCode,
+    clearStorage,
 }
 
 function setLanguages(languages) {
@@ -48,4 +49,8 @@ function getCurrencyCode() {
         data = JSON.parse(data);
     }
     return data
+}
+
+function clearStorage() {
+    localStorage.removeItem(currency_code);
 }

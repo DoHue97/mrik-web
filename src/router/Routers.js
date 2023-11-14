@@ -6,6 +6,10 @@ import HomePage from '../pages/home/HomeController';
 import DashboardPage from '../pages/dashboard/DashboardController';
 import UsersPage from '../pages/users/UsersController';
 import ForgotPasswordPage from "../pages/forgot-password/ForgotPasswordController";
+import WalletController from "../pages/wallet/WalletController";
+import InventoryController from "../pages/inventory/InventoryController";
+import OrdersController from "../pages/orders/OrdersController";
+import ProductsController from "../pages/products/ProductsController";
 
 export default function Routers(props){
     return(
@@ -15,12 +19,16 @@ export default function Routers(props){
             <Route path={'/'} element={<DashboardPage />}/>
             <Route path={config_path.dashboard} element={<DashboardPage />}/>
             <Route path={config_path.users} element={<UsersPage />}/>
+            <Route path={config_path.products} element={<ProductsController />}/>
+            <Route path={config_path.orders} element={<OrdersController />}/>
+            <Route path={config_path.wallet} element={<WalletController />}/>
+            <Route path={config_path.inventory} element={<InventoryController />}/>
             <Route path={config_path.home} element={<HomePage />}/>
         </Routes>
     )
 }
 
-function RequireAuth({ children }: { children: JSX.Element }) {
+function RequireAuth({ children }) {
     var session = null;
     let location = useLocation();
     console.log("AAAA RequireAuth location.pathname:", location.pathname);
@@ -32,7 +40,7 @@ function RequireAuth({ children }: { children: JSX.Element }) {
     }
 }
 
-function CheckSession({ children }: { children: JSX.Element }) {
+function CheckSession({ children }) {
     var session = null;
     let location = useLocation();
     if (!session) {

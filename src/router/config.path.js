@@ -5,6 +5,10 @@ export const config_path = {
     home: '/home',
     dashboard: '/dashboard',
     users: '/users',
+    inventory: '/inventory',
+    orders: '/orders',
+    wallet: '/wallet',
+    products: '/products',
 }
 
 const _IN_SESSION = 0;

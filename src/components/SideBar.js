@@ -114,6 +114,10 @@ export default function SideBar(props) {
         )
     }
 
+    const checkRoles = async () => {
+        console.log("AAAA CheckRoles menu: ", menu)
+    }
+
     return (
         <Box sx={{
             flexShrink: { lg: 0 },

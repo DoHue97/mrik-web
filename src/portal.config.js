@@ -1,4 +1,11 @@
 
+export const connection = {
+    cookiesConfig : {
+        secure: false,
+        expires: 0
+    },
+};
+
 export const HEADER = {
     H_MOBILE: 64,
     H_DESKTOP: 80,

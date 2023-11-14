@@ -9,7 +9,9 @@ export const vietnam = {
     profile: 'Tài khoản',
     settings: 'Cài đặt',
     logout: 'Đăng xuất',
-    users: 'Quản lý tài khoản',
+    users: 'Quản lý Tài khoản',
+    orders: 'Quản lý Đơn hàng',
+    wallet: 'Quản lý Ví',
 
     welcome: 'Xin chào 👋',
 
@@ -25,6 +27,8 @@ export const vietnam = {
     btn_edit: 'Sửa',
     btn_delete: 'Xóa',
     btn_login: 'Đăng nhập',
+    yes: 'Đồng ý',
+    no: 'Huỷ',
 
     //login
     email: 'Email',
@@ -42,5 +46,7 @@ export const vietnam = {
     forgot_password_desc: 'Nhập email của bạn để lấy lại mật khẩu.',
     
     //users
-    name: 'Họ & Tên'
+    name: 'Họ & Tên',
+    add_user: 'Thêm mới',
+    edit_user: 'Sửa',
 }

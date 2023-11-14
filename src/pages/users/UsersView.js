@@ -5,9 +5,10 @@ import DataTable from '../../components/DataTable';
 import { usersTableConfig } from "../../datatable.config";
 import { DeleteIcon, EditIcon } from "../../components/Icons";
 import { useTranslation } from "react-i18next";
+import Confirm from "../../components/Confirm";
 
 export default function UsersView(props) {
-    const { users } = props;
+    const { users, confirm, setConfirm, mode } = props;
     const { t } = useTranslation();
     const [openMenu, setOpenMenu] = useState(null);
 
@@ -16,13 +17,15 @@ export default function UsersView(props) {
         { label: 'btn_delete', icon: <DeleteIcon />, onClick: props.onDelete, id: 'user_delete' }
     ]
 
-    const handleOpenMenu = (event) => {
+    const handleOpenMenu = (event, row) => {
         console.log("AAA event: ", event)
+        if(props.setUser) props.setUser(row);
         setOpenMenu(event.target)
     }
 
     const handleCloseMenu = (item) => {
         if (item && item.onClick) item.onClick()
+        if(props.setUser) props.setUser(null);
         setOpenMenu(null)
     }
 
@@ -67,6 +70,16 @@ export default function UsersView(props) {
                     )
                 })}
             </Popover>}
+            {confirm && confirm.show && <Confirm 
+                isOpen={confirm.show}
+                onClose={confirm.onClose ? confirm.onClose : () => setConfirm(null)}
+                message={confirm.message}
+                title={confirm.title}
+                actionTitle={confirm.actionTitle}
+                closeTitle={confirm.closeTitle}
+                otherMessage={confirm.otherMessage}
+                onAction={confirm.onAction ? confirm.onAction : () => setConfirm(null)}
+            />}
         </ContainerCustom>
     )
 }
