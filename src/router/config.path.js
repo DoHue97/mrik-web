@@ -9,6 +9,8 @@ export const config_path = {
     orders: '/orders',
     wallet: '/wallet',
     products: '/products',
+    offers: '/offers',
+    new_offer: '/offers/new',
 }
 
 const _IN_SESSION = 0;

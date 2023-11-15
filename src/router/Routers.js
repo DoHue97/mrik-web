@@ -10,6 +10,8 @@ import WalletController from "../pages/wallet/WalletController";
 import InventoryController from "../pages/inventory/InventoryController";
 import OrdersController from "../pages/orders/OrdersController";
 import ProductsController from "../pages/products/ProductsController";
+import OffersController from "../pages/offers/OffersController";
+import NewOfferController from "../pages/offers/NewOfferController";
 
 export default function Routers(props){
     return(
@@ -23,6 +25,8 @@ export default function Routers(props){
             <Route path={config_path.orders} element={<OrdersController />}/>
             <Route path={config_path.wallet} element={<WalletController />}/>
             <Route path={config_path.inventory} element={<InventoryController />}/>
+            <Route path={config_path.offers} element={<OffersController />}/>
+            <Route path={config_path.new_offer} element={<NewOfferController />}/>
             <Route path={config_path.home} element={<HomePage />}/>
         </Routes>
     )

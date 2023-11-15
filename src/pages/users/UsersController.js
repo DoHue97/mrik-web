@@ -4,6 +4,7 @@ import { usersData } from "../../fakeData";
 import { useTranslation } from "react-i18next";
 import AddEditUserController from "./AddEditUserController";
 import Confirm from "../../components/Confirm";
+import RolesController from "./RolesController";
 
 export default function UsersController(props) {
     const { t } = useTranslation();
@@ -22,6 +23,7 @@ export default function UsersController(props) {
     const [user, setUser] = useState(null);
     const [mode, setMode] = useState(null);
     const [showAddEditForm, setShowAddEditForm] = useState(false);
+    const [showRolesForm, setShowRolesForm] = useState(false);
 
     useEffect(() => {
         onLoadData();
@@ -58,8 +60,8 @@ export default function UsersController(props) {
         }
         setConfirm({
             show: true,
-            message: t('Are you sure delete this user ' + user.name),
-            title: t('Delete User'),
+            message: t('delete_user_desc') + user.name + "?",
+            title: t('delete_user'),
             actionTitle: t('yes'),
             closeTitle: t('no'),
             onAction: () => onDeleteProcess(user),
@@ -91,6 +93,10 @@ export default function UsersController(props) {
         setShowAddEditForm(false);
     }
 
+    const onRoles = () => {
+        setShowRolesForm(true);
+    }
+
     const showMessage = ({ status, title, message, otherMessage, callBackFn }) => {
         setShowProcessing(false);
         setMessage({ show: status, title: title, content: message, otherMessage, callBackFn: callBackFn ? callBackFn : () => setMessage({}) });
@@ -103,6 +109,7 @@ export default function UsersController(props) {
                 showProcessing={showProcessing}
                 users={users}
                 confirm={confirm}
+                onRoles={onRoles}
                 onEdit={onEdit}
                 onDelete={onDelete}
                 handleChangeRowsPerPage={handleChangeRowsPerPage}
@@ -126,6 +133,11 @@ export default function UsersController(props) {
                 mode={mode}
                 user={user}
                 onClose={() => onCloseAddEditForm()}
+            />}
+            {showRolesForm && <RolesController 
+                isOpen={showRolesForm}
+                user={user}
+                onClose={() => {setShowRolesForm(false); setUser(null)}}
             />}
         </>
     )

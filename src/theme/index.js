@@ -428,7 +428,7 @@ export const theme = () => {
                 styleOverrides: {
                     root: {
                         width: '100%',
-                        fontFamily: commonFont.regular,                       
+                        fontFamily: commonFont.regular,
                         '& .MuiOutlinedInput-input': {
                             paddingTop: 12,
                             paddingBottom: 12,
@@ -437,6 +437,19 @@ export const theme = () => {
                     },
                 },
             },
+            MuiSelect: {
+                styleOverrides: {
+                    root: {
+                        width: '100%',
+                        fontFamily: commonFont.regular,
+                        '& .MuiOutlinedInput-input': {
+                            paddingTop: 12,
+                            paddingBottom: 12,
+                            fontFamily: commonFont.medium,
+                        }
+                    },
+                }
+            }
         }
     }
 

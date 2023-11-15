@@ -9,9 +9,9 @@ export const vietnam = {
     profile: 'Tài khoản',
     settings: 'Cài đặt',
     logout: 'Đăng xuất',
-    users: 'Quản lý Tài khoản',
-    orders: 'Quản lý Đơn hàng',
-    wallet: 'Quản lý Ví',
+    users: 'Tài khoản',
+    orders: 'Đơn hàng',
+    wallet: 'Ví',
 
     welcome: 'Xin chào 👋',
 
@@ -83,7 +83,7 @@ export const vietnam = {
     enter_password: 'Nhập mật khẩu',
     enter_email: 'Nhập email',
     forgot_password: 'Quên mật khẩu?',
-    required: 'Bắt buộc',
+    required: 'Không được để trống',
     enter_valid_email: 'Vui lòng nhập đúng email',
     must_be_enter_number: 'Vui lòng nhập số',
 
@@ -93,7 +93,7 @@ export const vietnam = {
     
     //users
     name: 'Họ & Tên',
-    add_user: 'Thêm mới',
+    add_user: 'Tạo mới',
     edit_user: 'Sửa',
     last_name: 'Tên',
     middle_name: 'Đệm',
@@ -102,9 +102,29 @@ export const vietnam = {
     enter_middle_name: 'Nhập tên đệm',
     enter_last_name: 'Nhập tên',
     can_not_found_user: 'Tài khoản không tồn tại.',
+    btn_roles: 'Phân quyền',
+    role_type: 'Quyền',
+    admin_role: 'Quản trị',
+    accountant_role: 'Kế toán',
+    business_role: 'Kinh doanh',
+    products_offers_role: 'Đăng sản phẩm & Ưu đãi',
+    offers: 'Ưu đãi',
+    delete_user_desc: 'Bạn có chắc chắn muốn xóa tài khoản này ',
+    delete_user: 'Xóa tài khoản',
 
     //orders
     created_date: 'Ngày tạo',
     number: 'Số đơn hàng',
     state: 'Trạng thái',
+
+    //offers
+    offers: 'Ưu đãi',
+    add_offer: 'Tạo mới',
+    can_not_found_offer: 'Ưu đãi không tồn tại.',
+    delete_offer: 'Xóa ưu đãi',
+    delete_offer_desc: 'Bạn có chắc chắn muốn xóa ưu đãi ',
+    offer_name: 'Tên',
+    enter_offer_name: 'Nhập tên',
+    offer_description: 'Mô tả',
+    offer_content: 'Nội dung',
 }

@@ -103,10 +103,10 @@ function SelectCustom({
     isValid, keyName, keyLabel,isHideLabel,
     ...rest
 }) {
-    console.log("AAAA defaultValueSelect: ", defaultValueSelect)
-    console.log("AAAA valueSelect: ", valueSelect)
-    console.log("AAAA keyName: ", keyName)
-    console.log("AAAA keyLabel: ", keyLabel)
+    // console.log("AAAA defaultValueSelect: ", defaultValueSelect)
+    // console.log("AAAA valueSelect: ", valueSelect)
+    // console.log("AAAA keyName: ", keyName)
+    // console.log("AAAA keyLabel: ", keyLabel)
     const { palette } = useTheme();
     if(!keyName) keyName = 'value';
     if(!keyLabel) keyLabel = 'label'
@@ -127,6 +127,7 @@ function SelectCustom({
                     // renderValue={(selected) => (selected && (selected.name?selected.name:(selected.label?selected.label:valueSelect)))}
                     onChange={e => {
                         onChange(e);
+                        if(onCustomChange) onCustomChange(e)
                         if (onSelectedChange)
                             onSelectedChange(e)
                     }}
@@ -142,7 +143,7 @@ function SelectCustom({
                 >
                     {selectData.map((item, index) => {
                         var SelectIcon = item.icon;
-                        console.log(item[keyLabel])
+                        // console.log(item[keyLabel])
                         return (<MenuItem key={index} value={item[keyName]}>
                             <Grid xs={12} item container>
                                 {item.icon && <SelectIcon />}

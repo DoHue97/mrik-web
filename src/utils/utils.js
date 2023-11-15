@@ -274,3 +274,16 @@ export function mappingValue(value) {
     }
     return translateValue;
 }
+
+export function mappingRoleTypes(type, t){
+    if(type == 'ADMIN'){
+        return t('admin_role');
+    } else if(type == 'ACCOUNTANT'){
+        return t('accountant_role')
+    } else if(type == 'BUSINESS'){
+        return t('business_role')
+    } else if(type == 'PRODUCTS_OFFERS'){
+        return t('products_offers_role')
+    }
+    else return type;
+}

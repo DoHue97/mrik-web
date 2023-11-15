@@ -102,9 +102,29 @@ export const english = {
     enter_middle_name: 'Enter middle name',
     enter_last_name: 'Enter last name',
     can_not_found_user: 'Can not found user.',
+    btn_roles: 'Roles',
+    role_type: 'Roles',
+    admin_role: 'Admin',
+    accountant_role: 'Accountant',
+    business_role: 'Business',
+    products_offers_role: 'Products and Offers',
+    offers: 'Offers',
+    delete_user_desc: 'Are you sure delete this user ',
+    delete_user: 'Delete user',
 
     //orders
     created_date: 'Created date',
     number: 'Number',
     state: 'State',
+
+    //offers
+    offers: 'Offers',
+    add_offer: 'Add Offer',
+    can_not_found_offer: 'Can not found offer.',
+    delete_offer: 'Delete Offer',
+    delete_offer_desc: 'Are you sure delete this offer ',
+    offer_name: 'Tên',
+    enter_offer_name: 'Nhập tên',
+    offer_description: 'Mô tả',
+    offer_content: 'Nội dung',
 }

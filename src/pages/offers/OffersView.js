@@ -6,22 +6,24 @@ import { usersTableConfig } from "../../datatable.config";
 import { DeleteIcon, EditIcon, MoreIcon, RolesIcon } from "../../components/Icons";
 import { useTranslation } from "react-i18next";
 import Card from "../../components/Card";
+import { useNavigate } from "react-router-dom";
+import { config_path } from "../../router/config.path";
 
-export default function UsersView(props) {
-    const { users } = props;
+export default function OffersView(props) {
+    const navigate = useNavigate();
+    const { offers } = props;
     const { t } = useTranslation();
     const [openMenu, setOpenMenu] = useState(null);
-    const [rowsPerPage, setRowsPerPage] = useState(users && users.paging && users.paging.size ? users.paging.size : 10);
+    const [rowsPerPage, setRowsPerPage] = useState(offers && offers.paging && offers.paging.size ? offers.paging.size : 10);
 
     const menuActionItem = [
-        { label: 'btn_roles', icon: <RolesIcon />, onClick: props.onRoles, id: 'user_roles' },
-        { label: 'btn_edit', icon: <EditIcon />, onClick: props.onEdit, id: 'user_edit' },
-        { label: 'btn_delete', icon: <DeleteIcon />, onClick: props.onDelete, id: 'user_delete' },
+        { label: 'btn_edit', icon: <EditIcon />, onClick: props.onEdit, id: 'offer_edit' },
+        { label: 'btn_delete', icon: <DeleteIcon />, onClick: props.onDelete, id: 'offer_delete' },
     ]
 
     const handleOpenMenu = (event, row) => {
         console.log("AAA event: ", event)
-        if(props.setUser) props.setUser(row);
+        if (props.setOffer) props.setOffer(row);
         setOpenMenu(event.target)
     }
 
@@ -36,7 +38,7 @@ export default function UsersView(props) {
 
     const handleChangeRowsPerPage = (event) => {
         let value = event.target.value;
-        let _size = users.paging.size ? users.paging.size : 10;
+        let _size = offers.paging.size ? offers.paging.size : 10;
         console.log("AAA parseInt(value, _size): ", parseInt(value, _size))
         setRowsPerPage(value);
         props.handleChangeRowsPerPage(value);
@@ -45,39 +47,26 @@ export default function UsersView(props) {
     return (
         <ContainerCustom showProcessing={props.showProcessing} message={props.message}>
             <Grid item xs={12} textAlign={'right'} my={1}>
-                <Button variant="contained" onClick={() => props.onAddUser()}>+ {t('add_user')}</Button>
+                <Button variant="contained" onClick={() => navigate(config_path.new_offer)}>+ {t('add_offer')}</Button>
             </Grid>
-            <Grid item xs={12}>
-                <Hidden mdDown>
-                    <DataTable
-                        tableConfig={usersTableConfig}
-                        data={users.content}
-                        enablePaging={true}
-                        paging={users.paging}
-                        onShowMenuActions={handleOpenMenu}
-                        handleChangeRowsPerPage={handleChangeRowsPerPage}
-                        handleChangePage={handleChangePage}
-                    />
-                </Hidden>
-                <Hidden mdUp>
-                    {users.content.map((item, index) => {
-                        return(
-                            <Grid item xs={12} key={index} my={1}>
-                                <UserItem item={item} menuActionItem={menuActionItem} handleOpenMenu={handleOpenMenu}/>
-                            </Grid>
-                        )
-                    })}
-                    <TablePagination
-                        component="div"
-                        count={users.paging.total}
-                        onPageChange={handleChangePage}
-                        rowsPerPage={rowsPerPage}
-                        page={users.paging.page ? users.paging.page - 1 : 0}
-                        onRowsPerPageChange={handleChangeRowsPerPage}
-                    />
-                </Hidden>
+            <Grid item xs={12} container spacing={1}>
+                {offers.content.map((item, index) => {
+                    return (
+                        <Grid item xs={12} sm={6} md={4} key={index} my={1}>
+                            <OfferItem item={item} menuActionItem={menuActionItem} handleOpenMenu={handleOpenMenu} />
+                        </Grid>
+                    )
+                })}
+                <TablePagination
+                    component="div"
+                    count={offers.paging.total}
+                    onPageChange={handleChangePage}
+                    rowsPerPage={rowsPerPage}
+                    page={offers.paging.page ? offers.paging.page - 1 : 0}
+                    onRowsPerPageChange={handleChangeRowsPerPage}
+                />
             </Grid>
-            {menuActionItem && menuActionItem.length > 0 && <Popover id='menu-actions-users'
+            {menuActionItem && menuActionItem.length > 0 && <Popover id='menu-actions-offers'
                 open={!!openMenu}
                 anchorEl={openMenu}
                 onClose={handleCloseMenu}
@@ -109,10 +98,10 @@ export default function UsersView(props) {
     )
 }
 
-function UserItem(props){
+function OfferItem(props) {
     const { item, handleOpenMenu } = props;
 
-    return(
+    return (
         <Card paddingX={2} paddingY={2}>
             <Stack width={'100%'} direction={'row'} alignItems={'center'} spacing={1}>
                 <Stack flex={1}>
@@ -122,7 +111,8 @@ function UserItem(props){
                     <IconButton onClick={(event) => handleOpenMenu(event, item)}><MoreIcon /></IconButton>
                 </Stack>
             </Stack>
-            <Typography variant="body2">{item.email}</Typography>
+            <Typography variant="caption">{item.description ? item.description : null}</Typography>
+            {/* <div dangerouslySetInnerHTML={{ __html: item.content }}></div> */}
         </Card>
     )
 }
