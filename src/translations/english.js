@@ -12,6 +12,9 @@ export const english = {
     users: 'Users',
     orders: 'Orders',
     wallet: 'Wallet',
+    request_withdrawal: 'Request a with drawal',
+    offers: 'Offers',
+    inventory: 'Inventory',
 
     welcome: 'Hi, Welcome back 👋',
 
@@ -118,7 +121,6 @@ export const english = {
     state: 'State',
 
     //offers
-    offers: 'Offers',
     add_offer: 'Add Offer',
     can_not_found_offer: 'Can not found offer.',
     delete_offer: 'Delete Offer',

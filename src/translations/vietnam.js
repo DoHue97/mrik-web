@@ -4,14 +4,17 @@ export const vietnam = {
 
     //menu
     dashboard: 'Tổng quan',
-    products: 'Sản phẩm',
+    products: 'Quản lý sản phẩm',
     home: 'Trang chủ',
     profile: 'Tài khoản',
     settings: 'Cài đặt',
     logout: 'Đăng xuất',
-    users: 'Tài khoản',
-    orders: 'Đơn hàng',
-    wallet: 'Ví',
+    users: 'Quản lý tài khoản',
+    orders: 'Quản lý đơn hàng',
+    wallet: 'Quản lý ví',
+    request_withdrawal: 'Quản lý yêu cầu rút tiền',
+    offers: 'Quản lý chương trình/chính sách ưu đãi',
+    inventory: 'Quản lý xuất/nhập kho',
 
     welcome: 'Xin chào 👋',
 
@@ -108,7 +111,6 @@ export const vietnam = {
     accountant_role: 'Kế toán',
     business_role: 'Kinh doanh',
     products_offers_role: 'Đăng sản phẩm & Ưu đãi',
-    offers: 'Ưu đãi',
     delete_user_desc: 'Bạn có chắc chắn muốn xóa tài khoản này ',
     delete_user: 'Xóa tài khoản',
 
@@ -118,7 +120,6 @@ export const vietnam = {
     state: 'Trạng thái',
 
     //offers
-    offers: 'Ưu đãi',
     add_offer: 'Tạo mới',
     can_not_found_offer: 'Ưu đãi không tồn tại.',
     delete_offer: 'Xóa ưu đãi',

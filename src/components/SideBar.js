@@ -84,7 +84,15 @@ export default function SideBar(props) {
                             <Box component="span" sx={{ width: 24, height: 24, mr: 2 }}>
                                 {item.icon}
                             </Box>
-                            <Box component={'span'}>{t(item.title)}</Box>
+                            <Typography variant="body2" sx={{
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                ':hover': {
+                                    overflow: 'visible',
+                                    whiteSpace: 'initial'
+                                }
+                            }}>{t(item.title)}</Typography>
                         </MenuItem>
                     )
                 })}

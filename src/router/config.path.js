@@ -2,7 +2,7 @@ export const config_path = {
     login: '/login',
     register: '/register',
     forgot_password: '/forgot_password',
-    home: '/home',
+    home: '/',
     dashboard: '/dashboard',
     users: '/users',
     inventory: '/inventory',
@@ -11,6 +11,9 @@ export const config_path = {
     products: '/products',
     offers: '/offers',
     new_offer: '/offers/new',
+    page_not_found: '/page-not-found',
+    access_denied: '/access-denied',
+    request_with_drawal: '/request-with-drawal',
 }
 
 const _IN_SESSION = 0;
