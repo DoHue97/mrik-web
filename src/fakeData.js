@@ -76,3 +76,37 @@ export const offersData = [
         content: 'Từ ngày 11/11/2023 sản phẩm A được giảm giá 5%, ưu đãi dành riêng cho các khách mua hàng trong thời gian diễn ra khuyến mại',
     },
 ]
+export const productsData = [
+    {
+        id: 'P01',
+        code: 'CN001',
+        quantity: 100,
+        name: 'MRIK trà thảo mộc Hồng Sâm Sachi',
+        description: 'Cung cấp lượng Acid béo không bão hòa và Protein cần thiết hỗ trợ cho sự phát triển của cơ thể Hỗ trợ bảo vệ sức khỏe tim mạch, tuần hoàn não, tế bào thần kinh Tăng khả năng miễn dịch cho cơ thể, hỗ trợ cho hệ xương chắc khỏe',
+        content: '',
+    },
+    {
+        id: 'P02',
+        code: 'CN002',
+        quantity: 100,
+        name: 'Viên thảo mộc Mrik bổ phổi Đẳng Sâm phục hồi Clean Virus',
+        description: '',
+        content: '',
+    },
+    {
+        id: 'P03',
+        code: 'CN003',
+        quantity: 100,
+        name: 'MRIK CARE – Bột Vitamin',
+        description: '',
+        content: '',
+    },
+    {
+        id: 'P04',
+        code: 'CN005',
+        quantity: 100,
+        name: 'MRIK RUMALIFE – Bữa ăn dinh dưỡng',
+        description: '',
+        content: '',
+    },
+]

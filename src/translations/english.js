@@ -32,6 +32,12 @@ export const english = {
     btn_login: 'Sign in',
     yes: 'Yes',
     no: 'No',
+    btn_add: 'Add',
+    btn_save: 'Save',
+
+    delete_title: 'Delete',
+    delete_desc: 'Are you sure delete ',
+    can_not_found_record: 'Can not found record to delete.',
 
     DAYS: {
         MONDAY: 'Monday',
@@ -129,4 +135,12 @@ export const english = {
     enter_offer_name: 'Nhập tên',
     offer_description: 'Mô tả',
     offer_content: 'Nội dung',
+
+    //products
+    product_name: 'Product Name',
+    enter_product_name: 'Enter product name',
+    product_description: 'Description',
+    product_code: 'Product Code',
+    enter_product_code: 'Enter product code',
+    product_content: 'Content',
 }

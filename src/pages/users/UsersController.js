@@ -55,13 +55,13 @@ export default function UsersController(props) {
     const onDelete = () => {
         console.log("AAA onDelete user: ", user)
         if(!user) {
-            showMessage({ status: true, message: t('can_not_found_user')});
+            showMessage({ status: true, message: t('can_not_found_record')});
             return false;
         }
         setConfirm({
             show: true,
-            message: t('delete_user_desc') + user.name + "?",
-            title: t('delete_user'),
+            message: t('delete_desc') + user.name + "?",
+            title: t('delete_title'),
             actionTitle: t('yes'),
             closeTitle: t('no'),
             onAction: () => onDeleteProcess(user),

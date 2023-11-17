@@ -428,11 +428,12 @@ export const theme = () => {
                 styleOverrides: {
                     root: {
                         width: '100%',
+                        background: grey[0],
                         fontFamily: commonFont.regular,
                         '& .MuiOutlinedInput-input': {
                             paddingTop: 12,
                             paddingBottom: 12,
-                            fontFamily: commonFont.medium,
+                            fontFamily: commonFont.regular,
                         }
                     },
                 },
@@ -442,6 +443,7 @@ export const theme = () => {
                     root: {
                         width: '100%',
                         fontFamily: commonFont.regular,
+                        background: grey[0],
                         '& .MuiOutlinedInput-input': {
                             paddingTop: 12,
                             paddingBottom: 12,

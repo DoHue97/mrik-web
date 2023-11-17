@@ -34,7 +34,7 @@ function ContainerCustom(props) {
                             py: `${HEADER.H_DESKTOP + SPACING}px`,
                             width: `calc(100% - ${NAV.WIDTH}px)`,
                         },
-                        [theme.breakpoints.down('sm')]: {
+                        [theme.breakpoints.down('md')]: {
                             px: 1,
                         },
                         ...sx,

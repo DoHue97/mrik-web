@@ -1,7 +1,7 @@
 export const config_path = {
     login: '/login',
     register: '/register',
-    forgot_password: '/forgot_password',
+    // forgot_password: '/forgot_password',
     home: '/',
     dashboard: '/dashboard',
     users: '/users',
@@ -9,6 +9,8 @@ export const config_path = {
     orders: '/orders',
     wallet: '/wallet',
     products: '/products',
+    product_add: '/products/add',
+    product_edit: '/products/edit/:id',
     offers: '/offers',
     new_offer: '/offers/new',
     page_not_found: '/page-not-found',

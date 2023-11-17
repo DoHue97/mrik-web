@@ -30,6 +30,7 @@ export default function UsersView(props) {
         setOpenMenu(null)
     }
 
+    //use when mobile screen
     const handleChangePage = (event, newPage) => {
         handleChangePage(newPage + 1);
     };
@@ -45,7 +46,7 @@ export default function UsersView(props) {
     return (
         <ContainerCustom showProcessing={props.showProcessing} message={props.message}>
             <Grid item xs={12} textAlign={'right'} my={1}>
-                <Button variant="contained" onClick={() => props.onAddUser()}>+ {t('add_user')}</Button>
+                <Button variant="contained" onClick={() => props.onAddUser()}>+ {t('btn_add')}</Button>
             </Grid>
             <Grid item xs={12}>
                 <Hidden mdDown>
@@ -55,8 +56,8 @@ export default function UsersView(props) {
                         enablePaging={true}
                         paging={users.paging}
                         onShowMenuActions={handleOpenMenu}
-                        handleChangeRowsPerPage={handleChangeRowsPerPage}
-                        handleChangePage={handleChangePage}
+                        handleChangeRowsPerPage={props.handleChangeRowsPerPage}
+                        handleChangePage={props.handleChangePage}
                     />
                 </Hidden>
                 <Hidden mdUp>

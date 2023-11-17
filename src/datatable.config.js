@@ -33,3 +33,9 @@ export const ordersTableConfig = [
     { key: 'state', label: 'state' },
     { key: '', label: '', align: align.right, action: true, actionIcon: MoreIcon, actionType: actionType.func, actionFuncName: 'onShowMenuActions' },
 ]
+
+export const productsTableConfig = [
+    { key: 'code', label: 'product_code' },
+    { key: 'name', label: 'product_name' },
+    { key: '', label: '', align: align.right, action: true, actionIcon: MoreIcon, actionType: actionType.func, actionFuncName: 'onShowMenuActions' },
+]

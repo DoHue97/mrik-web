@@ -32,6 +32,12 @@ export const vietnam = {
     btn_login: 'Đăng nhập',
     yes: 'Đồng ý',
     no: 'Huỷ',
+    btn_add: 'Tạo mới',
+    btn_save: 'Lưu',
+
+    delete_title: 'Xóa',
+    delete_desc: 'Bạn có chắc muốn xóa ',
+    can_not_found_record: 'Không tìm thấy bản ghi cần xóa.',
 
     DAYS: {
         MONDAY: 'Thứ 2',
@@ -128,4 +134,12 @@ export const vietnam = {
     enter_offer_name: 'Nhập tên',
     offer_description: 'Mô tả',
     offer_content: 'Nội dung',
+
+    //products
+    product_name: 'Tên sản phẩm',
+    enter_product_name: 'Nhập tên sản phẩm',
+    product_description: 'Mô tả',
+    product_code: 'Mã sản phẩm',
+    enter_product_code: 'Nhập mã sản phẩm',
+    product_content: 'Nội dung',
 }

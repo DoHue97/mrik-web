@@ -47,7 +47,7 @@ export default function OffersView(props) {
     return (
         <ContainerCustom showProcessing={props.showProcessing} message={props.message}>
             <Grid item xs={12} textAlign={'right'} my={1}>
-                <Button variant="contained" onClick={() => navigate(config_path.new_offer)}>+ {t('add_offer')}</Button>
+                <Button variant="contained" onClick={() => navigate(config_path.new_offer)}>+ {t('btn_add')}</Button>
             </Grid>
             <Grid item xs={12} container spacing={1}>
                 {offers.content.map((item, index) => {

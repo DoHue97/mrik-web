@@ -57,9 +57,9 @@ export default function LoginView(props) {
                                             validate={validators.required}
                                         />
                                     </Grid>
-                                    <Grid item xs={12} container justifyContent={'flex-end'} mt={1}>
+                                    {/* <Grid item xs={12} container justifyContent={'flex-end'} mt={1}>
                                         <Button id='loginEmail/bntForgotPassword' onClick={() => navigate(config_path.forgot_password)} variant='text'>{t('forgot_password')}</Button>
-                                    </Grid>
+                                    </Grid> */}
                                     <Grid item xs={12} marginY={3}>
                                         <Button id='loginEmail/btnSubmit' size="large" fullWidth variant='contained' onClick={handleSubmit} type='submit'>{t('btn_submit')}</Button>
                                     </Grid>

@@ -15,6 +15,7 @@ import NewOfferController from "../pages/offers/NewOfferController";
 import PageNotFound from "../pages/PageNotFound";
 import AccessDenied from "../pages/AccessDenied";
 import RequestWithDrawalController from "../pages/request-drawal/RequestWithDrawalController";
+import AddEditProductController from "../pages/products/AddEditProductController";
 
 export default function Routers(props) {
     const navigate = useNavigate();
@@ -22,19 +23,21 @@ export default function Routers(props) {
     useEffect(() => {
         var pathname = window.location.pathname;
         let paths = Object.values(config_path);
-        if(!paths.includes(pathname)){
-            pathname = config_path.page_not_found;
-            navigate(pathname)
-        }
+        // if(!paths.includes(pathname)){
+        //     pathname = config_path.page_not_found;
+        //     navigate(pathname)
+        // }
     },[])
 
     return (
         <Routes>
             <Route exact path={config_path.login} element={<LoginPage />} />
-            <Route path={config_path.forgot_password} element={<ForgotPasswordPage />} />
+            {/* <Route path={config_path.forgot_password} element={<ForgotPasswordPage />} /> */}
             <Route path={config_path.dashboard} element={<DashboardPage />} />
             <Route path={config_path.users} element={<CheckPermission><UsersPage /></CheckPermission>} />
             <Route path={config_path.products} element={<CheckPermission><ProductsController /></CheckPermission>} />
+            <Route path={config_path.product_add} element={<CheckPermission><AddEditProductController /></CheckPermission>} />
+            <Route path={config_path.product_edit} element={<CheckPermission><AddEditProductController /></CheckPermission>} />
             <Route path={config_path.orders} element={<CheckPermission><OrdersController /></CheckPermission>} />
             <Route path={config_path.wallet} element={<CheckPermission><WalletController /></CheckPermission>} />
             <Route path={config_path.inventory} element={<CheckPermission><InventoryController /></CheckPermission>} />
