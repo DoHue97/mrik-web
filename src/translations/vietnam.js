@@ -139,6 +139,7 @@ export const vietnam = {
     enter_offer_name: 'Nhập tên',
     offer_description: 'Mô tả',
     offer_content: 'Nội dung',
+    enter_offers_search_value: 'Nhập tên',
 
     //products
     product_name: 'Tên sản phẩm',

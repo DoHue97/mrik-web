@@ -140,6 +140,7 @@ export const english = {
     enter_offer_name: 'Nhập tên',
     offer_description: 'Mô tả',
     offer_content: 'Nội dung',
+    enter_offers_search_value: 'Enter name',
 
     //products
     product_name: 'Product Name',

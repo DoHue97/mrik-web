@@ -17,7 +17,7 @@ export default function ProductsController(props) {
         content: productsData,
         paging: {
             size: 10,
-            total: 0,
+            total: productsData.length,
             page: 1,
         }
     });

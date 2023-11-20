@@ -13,7 +13,6 @@ export const menu = [
 ]
 
 export const profile = [
-    { id: 'MENU_HOME', title: 'home' },
     { id: 'MENU_PROFILE', title: 'profile' },
     { id: 'MENU_SETTINGS', title: 'settings' },
 ]

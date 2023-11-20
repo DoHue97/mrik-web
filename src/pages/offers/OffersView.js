@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import ContainerCustom from "../../components/Container";
-import { Button, Grid, Hidden, IconButton, Popover, Stack, TablePagination, Typography } from "@mui/material";
-import DataTable from '../../components/DataTable';
-import { usersTableConfig } from "../../datatable.config";
-import { DeleteIcon, EditIcon, MoreIcon, RolesIcon } from "../../components/Icons";
+import { Button, Grid, Box, IconButton, Popover, Stack, TablePagination, TextField, Typography, useTheme } from "@mui/material";
+import { DeleteIcon, EditIcon, MoreIcon, RolesIcon, SearchIcon } from "../../components/Icons";
 import { useTranslation } from "react-i18next";
 import Card from "../../components/Card";
 import { useNavigate } from "react-router-dom";
@@ -11,8 +9,10 @@ import { config_path } from "../../router/config.path";
 
 export default function OffersView(props) {
     const navigate = useNavigate();
-    const { offers } = props;
     const { t } = useTranslation();
+    const theme = useTheme();
+    const { offers } = props;
+
     const [openMenu, setOpenMenu] = useState(null);
     const [rowsPerPage, setRowsPerPage] = useState(offers && offers.paging && offers.paging.size ? offers.paging.size : 10);
 
@@ -46,10 +46,31 @@ export default function OffersView(props) {
 
     return (
         <ContainerCustom showProcessing={props.showProcessing} message={props.message}>
-            <Grid item xs={12} textAlign={'right'} my={1}>
+            {/* <Grid item xs={12} textAlign={'right'} my={1}>
                 <Button variant="contained" onClick={() => navigate(config_path.offer_add)}>+ {t('btn_add')}</Button>
-            </Grid>
+            </Grid> */}
             <Grid item xs={12} container spacing={1}>
+                <Grid item xs={12} container spacing={1} my={1} alignItems={'center'}>
+                    <Grid item xs={12} sm={9} container spacing={1} alignItems={'center'}>
+                        <Grid item xs={9}>
+                            <TextField
+                                name="offers_search"
+                                id="offers_search"
+                                placeholder={t('enter_offers_search_value')}                                
+                                value={props.search_value}
+                                onChange={(event) => props.onHandleChange(event.target.value)}
+                            />
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Button variant="contained" onClick={() => props.onSearch()}><SearchIcon color={theme.palette.common.white} /></Button>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={12} sm={3} justifyContent={'flex-end'}>
+                        <Box width={'100%'} textAlign={'right'}>
+                            <Button variant="contained" onClick={() => navigate(config_path.offer_add)}>+ {t('btn_add')}</Button>
+                        </Box>
+                    </Grid>
+                </Grid>
                 {offers.content.map((item, index) => {
                     return (
                         <Grid item xs={12} sm={6} md={4} key={index} my={1}>

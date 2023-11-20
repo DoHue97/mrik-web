@@ -16,12 +16,13 @@ export default function OffersController(props) {
         paging: {
             size: 10,
             page: 1,
-            total: 0
+            total: offersData.length
         }
     });
     const [offer, setOffer] = useState(null);
     const [showOfferDetail, setShowOfferDetail] = useState(false);
     const [confirm, setConfirm] = useState(null);
+    const [searchValue, setSearchValue] = useState(null);
 
     useEffect(() => {
         onLoadData();
@@ -31,7 +32,7 @@ export default function OffersController(props) {
         await onLoadOffers({});
     }
 
-    const onLoadOffers = async ({ size = 10, page = 1 }) => {
+    const onLoadOffers = async ({ size = 10, page = 1, searchValue }) => {
         try {
             let result = {};
         } catch (error) {
@@ -86,17 +87,31 @@ export default function OffersController(props) {
         }
     }
 
+    const onHandleChange = (value) => {
+        setSearchValue(value);
+    }
+
+    const onSearch = async () => {
+        if(searchValue && searchValue.length > 1){
+            console.log("AAAA onSearch searchValue: ", searchValue)
+            await onLoadOffers({ size: 10, page: 1, search_value: searchValue})
+        }
+    }
+
     return (
         <>
             <OffersView
                 showProcessing={showProcessing}
                 message={message}
                 offers={offers}
+                searchValue={searchValue}
                 handleChangePage={handleChangePage}
                 handleChangeRowsPerPage={handleChangeRowsPerPage}
                 setOffer={setOffer}
                 onDelete={onDelete}
                 onEdit={onEdit}
+                onHandleChange={onHandleChange}
+                onSearch={onSearch}
             />
             {confirm && confirm.show && <Confirm
                 isOpen={confirm.show}
