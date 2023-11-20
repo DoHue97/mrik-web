@@ -6,9 +6,10 @@ import Header from "./Header";
 import Alert from './Alert';
 import Loading from './Loading';
 import SideBar from "./SideBar";
+import MenuBreadcrumbs from "./Breadcrumbs";
 
 function ContainerCustom(props) {
-    const { children, other, sx, message, hideSideBar, showLoading, hideHeader } = props;
+    const { children, other, sx, message, hideSideBar, showLoading, hideHeader, showBreadCrumbs, breadcrumbs } = props;
     const theme = useTheme();
 
     return (
@@ -29,8 +30,8 @@ function ContainerCustom(props) {
                         display: 'flex',
                         flexDirection: 'column',
                         py: `${HEADER.H_MOBILE + SPACING}px`,
+                        px: 2,
                         [theme.breakpoints.up('lg')]: {
-                            px: 2,
                             py: `${HEADER.H_DESKTOP + SPACING}px`,
                             width: `calc(100% - ${NAV.WIDTH}px)`,
                         },
@@ -41,6 +42,7 @@ function ContainerCustom(props) {
                     }}
                     {...other}
                 >
+                    {showBreadCrumbs && <MenuBreadcrumbs items={breadcrumbs}/>}
                     {children}
                 </Box>
             </Box>
@@ -61,6 +63,8 @@ ContainerCustom.propTypes = {
     showFooter: PropTypes.bool,
     showProcessing: PropTypes.bool,
     hideSideBar: PropTypes.bool,
+    showBreadCrumbs: PropTypes.bool,
+    breadcrumbs: PropTypes.array,
 }
 
 export default ContainerCustom;

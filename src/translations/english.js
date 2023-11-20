@@ -34,6 +34,7 @@ export const english = {
     no: 'No',
     btn_add: 'Add',
     btn_save: 'Save',
+    btn_search: 'Search',
 
     delete_title: 'Delete',
     delete_desc: 'Are you sure delete ',
@@ -110,6 +111,8 @@ export const english = {
     enter_first_name: 'Enter first name',
     enter_middle_name: 'Enter middle name',
     enter_last_name: 'Enter last name',
+    enter_phone: 'Enter phone number',
+    phone: 'Phone number',
     can_not_found_user: 'Can not found user.',
     btn_roles: 'Roles',
     role_type: 'Roles',
@@ -120,6 +123,7 @@ export const english = {
     offers: 'Offers',
     delete_user_desc: 'Are you sure delete this user ',
     delete_user: 'Delete user',
+    enter_user_search_value: 'Enter name, email, ...',
 
     //orders
     created_date: 'Created date',
@@ -128,6 +132,7 @@ export const english = {
 
     //offers
     add_offer: 'Add Offer',
+    edit_offer: 'Edit Offer',
     can_not_found_offer: 'Can not found offer.',
     delete_offer: 'Delete Offer',
     delete_offer_desc: 'Are you sure delete this offer ',
@@ -143,4 +148,8 @@ export const english = {
     product_code: 'Product Code',
     enter_product_code: 'Enter product code',
     product_content: 'Content',
+    upload_file: 'Upload file',
+    upload_file_desc: "Drag 'n' drop some files here, or click to select files",
+    enter_product_search_value: 'Enter name, code',
+    add_product: 'Add Product',
 }

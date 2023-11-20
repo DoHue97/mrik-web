@@ -35,6 +35,11 @@ export default function AddEditUserController(props){
         setShowProcessing(false)
     }
 
+    const showMessage = ({ status, title, message, otherMessage, callBackFn }) => {
+        setShowProcessing(false);
+        setMessage({ show: status, title: title, content: message, otherMessage, callBackFn: callBackFn ? callBackFn : () => setMessage({}) });
+    }
+
     return(
         <AddEditUserView 
             mode={mode}

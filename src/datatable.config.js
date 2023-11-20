@@ -24,6 +24,7 @@ const actionType = {
 export const usersTableConfig = [
     { key: 'name', label: 'name' },
     { key: 'email', label: 'email' },
+    { key: 'phone', label: 'phone' },
     { key: '', label: '', align: align.right, action: true, actionIcon: MoreIcon, actionType: actionType.func, actionFuncName: 'onShowMenuActions' },
 ]
 

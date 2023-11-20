@@ -11,7 +11,7 @@ import InventoryController from "../pages/inventory/InventoryController";
 import OrdersController from "../pages/orders/OrdersController";
 import ProductsController from "../pages/products/ProductsController";
 import OffersController from "../pages/offers/OffersController";
-import NewOfferController from "../pages/offers/NewOfferController";
+import AddEditOfferController from "../pages/offers/AddEditOfferController";
 import PageNotFound from "../pages/PageNotFound";
 import AccessDenied from "../pages/AccessDenied";
 import RequestWithDrawalController from "../pages/request-drawal/RequestWithDrawalController";
@@ -42,7 +42,8 @@ export default function Routers(props) {
             <Route path={config_path.wallet} element={<CheckPermission><WalletController /></CheckPermission>} />
             <Route path={config_path.inventory} element={<CheckPermission><InventoryController /></CheckPermission>} />
             <Route path={config_path.offers} element={<CheckPermission><OffersController /></CheckPermission>} />
-            <Route path={config_path.new_offer} element={<CheckPermission><NewOfferController /></CheckPermission>} />
+            <Route path={config_path.offer_add} element={<CheckPermission><AddEditOfferController /></CheckPermission>} />
+            <Route path={config_path.offer_edit} element={<CheckPermission><AddEditOfferController /></CheckPermission>} />
             <Route path={config_path.request_with_drawal} element={<CheckPermission><RequestWithDrawalController /></CheckPermission>} />
             <Route path={config_path.page_not_found} element={<PageNotFound />} />
             <Route path={config_path.access_denied} element={<AccessDenied />} />

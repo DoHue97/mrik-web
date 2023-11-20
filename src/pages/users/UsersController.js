@@ -4,7 +4,6 @@ import { usersData } from "../../fakeData";
 import { useTranslation } from "react-i18next";
 import AddEditUserController from "./AddEditUserController";
 import Confirm from "../../components/Confirm";
-import RolesController from "./RolesController";
 
 export default function UsersController(props) {
     const { t } = useTranslation();
@@ -24,6 +23,7 @@ export default function UsersController(props) {
     const [mode, setMode] = useState(null);
     const [showAddEditForm, setShowAddEditForm] = useState(false);
     const [showRolesForm, setShowRolesForm] = useState(false);
+    const [searchValue, setSearchValue] = useState(null);
 
     useEffect(() => {
         onLoadData();
@@ -33,7 +33,7 @@ export default function UsersController(props) {
         await onLoadUsers({ page: 1, size: 10 });
     }
 
-    const onLoadUsers = async ({ page = 1, size = 10 }) => {
+    const onLoadUsers = async ({ page = 1, size = 10, search_value = "" }) => {
         try {
 
         } catch (error) {
@@ -93,13 +93,19 @@ export default function UsersController(props) {
         setShowAddEditForm(false);
     }
 
-    const onRoles = () => {
-        setShowRolesForm(true);
-    }
-
     const showMessage = ({ status, title, message, otherMessage, callBackFn }) => {
         setShowProcessing(false);
         setMessage({ show: status, title: title, content: message, otherMessage, callBackFn: callBackFn ? callBackFn : () => setMessage({}) });
+    }
+
+    const onHandleChange = (value) => {
+        setSearchValue(value);
+    }
+
+    const onSearch = async () => {
+        if(searchValue){
+            await onLoadUsers({ size: 10, page: 1, search_value: searchValue})
+        }
     }
 
     return (
@@ -109,7 +115,7 @@ export default function UsersController(props) {
                 showProcessing={showProcessing}
                 users={users}
                 confirm={confirm}
-                onRoles={onRoles}
+                searchValue={searchValue}
                 onEdit={onEdit}
                 onDelete={onDelete}
                 handleChangeRowsPerPage={handleChangeRowsPerPage}
@@ -117,6 +123,8 @@ export default function UsersController(props) {
                 setUser={setUser}
                 setConfirm={setConfirm}
                 onAddUser={onAddUser}
+                onHandleChange={onHandleChange}
+                onSearch={onSearch}
             />
             {confirm && confirm.show && <Confirm
                 isOpen={confirm.show}
@@ -133,11 +141,6 @@ export default function UsersController(props) {
                 mode={mode}
                 user={user}
                 onClose={() => onCloseAddEditForm()}
-            />}
-            {showRolesForm && <RolesController 
-                isOpen={showRolesForm}
-                user={user}
-                onClose={() => {setShowRolesForm(false); setUser(null)}}
             />}
         </>
     )

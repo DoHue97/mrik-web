@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ContainerCustom from '../../components/Container'
-import { Grid, Hidden, Popover, TablePagination, Typography, Stack, IconButton, Button } from "@mui/material";
-import { EditIcon, DeleteIcon, MoreIcon } from "../../components/Icons";
+import { Grid, Hidden, Popover, TablePagination, Typography, Stack, IconButton, Button, useTheme, TextField, Box } from "@mui/material";
+import { EditIcon, DeleteIcon, MoreIcon, SearchIcon } from "../../components/Icons";
 import { useTranslation } from "react-i18next";
 import DataTable from "../../components/DataTable";
 import CardComponent from "../../components/Card";
@@ -9,6 +9,7 @@ import { productsTableConfig } from "../../datatable.config";
 
 export default function ProductsView(props){
     const { t } = useTranslation();
+    const theme = useTheme();
     const { products } = props;
     const [openMenu, setOpenMenu] = useState(null);
     const [rowsPerPage, setRowsPerPage] = useState(products && products.paging && products.paging.size ? products.paging.size : 10);
@@ -43,10 +44,28 @@ export default function ProductsView(props){
 
     return(        
         <ContainerCustom showProcessing={props.showProcessing} message={props.message}>
-           <Grid item xs={12} textAlign={'right'} my={1}>
-                <Button variant="contained" onClick={() => props.onAddProduct()}>+ {t('btn_add')}</Button>
-            </Grid>
             <Grid item xs={12}>
+                <Grid item xs={12} container spacing={1} my={1} alignItems={'center'}>
+                    <Grid item xs={12} sm={9} container spacing={1} alignItems={'center'}>
+                        <Grid item xs={9}>
+                            <TextField
+                                name="products_search"
+                                id="products_search"
+                                placeholder={t('enter_product_search_value')}                                
+                                value={props.search_value}
+                                onChange={(event) => props.onHandleChange(event.target.value)}
+                            />
+                        </Grid>
+                        <Grid item xs={3}>
+                            <Button variant="contained" onClick={() => props.onSearch()}><SearchIcon color={theme.palette.common.white} /></Button>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={12} sm={3} justifyContent={'flex-end'}>
+                        <Box width={'100%'} textAlign={'right'}>
+                            <Button variant="contained" onClick={() => props.onAddProduct()}>+ {t('btn_add')}</Button>
+                        </Box>
+                    </Grid>
+                </Grid>
                 <Hidden mdDown>
                     <DataTable
                         tableConfig={productsTableConfig}

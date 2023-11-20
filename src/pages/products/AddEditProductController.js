@@ -17,6 +17,7 @@ export default function AddEditProductController(props) {
     const [showProcessing, setShowProcessing] = useState(false);
     const [message, setMessage] = useState(null);
     const [content, setContent] = useState(null);
+    const [file, setFile] = useState(null);
 
     useEffect(() => {
         onLoadData();
@@ -38,7 +39,19 @@ export default function AddEditProductController(props) {
 
     const onSubmit = async (values) => {
         console.log("AAAA onSubmit values: ", values)
+        console.log("AAAA onSubmit file: ", file)
         navigate(config_path.products);
+    }
+
+    const onUploadFile = (files) => {
+        if(files && files.length > 0){
+            setFile(files[0])
+        }
+    }
+
+    const showMessage = ({ status, title, message, otherMessage, callBackFn }) => {
+        setShowProcessing(false);
+        setMessage({ show: status, title: title, content: message, otherMessage, callBackFn: callBackFn ? callBackFn : () => setMessage({}) });
     }
 
     return (
@@ -49,8 +62,11 @@ export default function AddEditProductController(props) {
                 product={product}
                 showProcessing={showProcessing}
                 content={content}
+                file={file}
                 onSubmit={onSubmit}
                 setContent={setContent}
+                onUploadFile={onUploadFile}
+                setFile={setFile}
             />
         </>
     )

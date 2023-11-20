@@ -5,16 +5,29 @@ import { Form, Field } from "react-final-form";
 import { TextAreaCustom, TextFieldCustom } from "../../components/FormElements";
 import validators from "../../utils/validators";
 import { useTranslation } from "react-i18next";
+import CheckEditor from "../../components/CheckEditor";
+import { config_path } from "../../router/config.path";
 
-export default function NewOfferView(props) {
+export default function AddEditOfferView(props) {
     const { t } = useTranslation();
+    const { offer, mode } = props;
 
+    let breadcrumbs = [
+        {
+            name: t('offers'),
+            link: config_path.offers,
+        },
+        {
+            name: (mode == 'edit' || (offer && offer.name)) ? offer.name : t('add_offer'),
+            // link:(mode == 'edit' || (offer && offer.name)) ? config_path.offer_edit : config_path.offer_add,
+        }
+    ]
     return (
-        <Container message={props.message} showProcessing={props.showProcessing}>
-            <Typography>NewOfferView</Typography>
+        <Container message={props.message} showProcessing={props.showProcessing} showBreadCrumbs={true} breadcrumbs={breadcrumbs}>
             <Grid item xs={12}>
                 <Form
                     onSubmit={props.onSubmit}
+                    initialValues={{...offer}}
                     render={({ handleSubmit }) => {
                         return(
                             <Grid item xs={12}>
@@ -40,17 +53,19 @@ export default function NewOfferView(props) {
                                     />
                                 </Grid>
                                 <Grid item xs={12} marginY={2}>
-                                    <Field
+                                    {/* <Field
                                         name="content"
                                         label={t('offer_content')}
                                         component={TextAreaCustom}
                                         isEdit={true}
                                         rows={2}
                                         validate={validators.composeValidators(validators.required)}
-                                    />
+                                    /> */}
+                                    <Typography mb={1} variant="body2">{t('offer_content')}</Typography>
+                                    <CheckEditor id="offer_content" onChange={(data) => props.setContent(data)} />
                                 </Grid>
                                 <Grid item xs={12} marginY={3}>
-                                    <Button id='newOffer/btnSubmit' size="large" fullWidth variant='contained' onClick={handleSubmit} type='submit'>{t('btn_submit')}</Button>
+                                    <center><Button id='newOffer/btnSubmit' size="medium" variant='contained' onClick={handleSubmit} type='submit'>{t('btn_submit')}</Button></center>
                                 </Grid>
                             </Grid>
                         )

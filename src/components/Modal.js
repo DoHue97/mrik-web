@@ -13,6 +13,11 @@ function Modal(props) {
             onClose={onClose}
             fullWidth={maxWidth ? true : false}
             maxWidth={maxWidth ? maxWidth : 'sm'}
+            sx={{
+                '.MuiDialog-paper': {
+                    minWidth: 400,
+                }
+            }}
         >
             {enableCloseButton && <IconButton sx={{
                 position: 'absolute',

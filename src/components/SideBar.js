@@ -57,7 +57,17 @@ export default function SideBar(props) {
         return (
             <Stack component={'nav'} spacing={0.5} sx={{ px: 2 }}>
                 {menu.map((item, index) => {
-                    let active = item.route == pathname;
+                    let active = false;
+                    let strPathname = pathname.split('/');
+                    if(strPathname && strPathname.length > 0){
+                        for (let i = 1; i < strPathname.length; i++) {
+                            let element = '/' + strPathname[i];
+                            if(element == item.route){
+                                active = true;
+                                break;
+                            }
+                        }
+                    }
                     if(item.route == '/dashboard' && pathname == '/'){
                         active = true;
                     }

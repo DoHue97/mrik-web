@@ -23,6 +23,7 @@ export default function ProductsController(props) {
     });
     const [product, setProduct] = useState(null);
     const [confirm, setConfirm] = useState(null);
+    const [searchValue, setSearchValue] = useState(null);
 
     useEffect(() => {
         onLoadData();
@@ -32,7 +33,7 @@ export default function ProductsController(props) {
         await onLoadProducts({});
     }
 
-    const onLoadProducts = async ({ size = 10, page = 1 }) => {
+    const onLoadProducts = async ({ size = 10, page = 1, searchValue }) => {
         try {
 
         } catch (error) {
@@ -90,6 +91,17 @@ export default function ProductsController(props) {
         setMessage({ show: status, title: title, content: message, otherMessage, callBackFn: callBackFn ? callBackFn : () => setMessage({}) });
     }
 
+    const onHandleChange = (value) => {
+        setSearchValue(value);
+    }
+
+    const onSearch = async () => {
+        if(searchValue && searchValue.length > 1){
+            console.log("AAAA onSearch searchValue: ", searchValue)
+            await onLoadProducts({ size: 10, page: 1, search_value: searchValue})
+        }
+    }
+
     return (
         <>
             <ProductsView
@@ -97,12 +109,15 @@ export default function ProductsController(props) {
                 message={message}
                 products={products}
                 product={product}
+                searchValue={searchValue}
                 handleChangePage={handleChangePage}
                 handleChangeRowsPerPage={handleChangeRowsPerPage}
                 setProduct={setProduct}
                 onAddProduct={onAddProduct}
                 onEdit={onEdit}
                 onDelete={onDelete}
+                onSearch={onSearch}
+                onHandleChange={onHandleChange}
             />
             {confirm && confirm.show && <Confirm
                 isOpen={confirm.show}

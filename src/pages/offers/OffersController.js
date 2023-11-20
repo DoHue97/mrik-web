@@ -3,16 +3,19 @@ import OffersView from "./OffersView";
 import { offersData } from "../../fakeData";
 import Confirm from "../../components/Confirm";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { config_path } from "../../router/config.path";
 
-export default function OffersController(props){
+export default function OffersController(props) {
     const { t } = useTranslation();
+    const navigate = useNavigate();
     const [showProcessing, setShowProcessing] = useState(false);
     const [message, setMessage] = useState(null);
     const [offers, setOffers] = useState({
         content: offersData,
         paging: {
-            size: 10, 
-            page: 1, 
+            size: 10,
+            page: 1,
             total: 0
         }
     });
@@ -22,15 +25,15 @@ export default function OffersController(props){
 
     useEffect(() => {
         onLoadData();
-    },[])
+    }, [])
 
     const onLoadData = async () => {
         await onLoadOffers({});
     }
 
-    const onLoadOffers = async ({size = 10, page = 1}) => {
+    const onLoadOffers = async ({ size = 10, page = 1 }) => {
         try {
-            let result = {};            
+            let result = {};
         } catch (error) {
             console.log("AAAA onLoadOffers exception: ", error);
         }
@@ -48,8 +51,8 @@ export default function OffersController(props){
 
     const onDelete = () => {
         console.log("AAA onDelete offer: ", offer)
-        if(!offer) {
-            showMessage({ status: true, message: t('can_not_found_offer')});
+        if (!offer) {
+            showMessage({ status: true, message: t('can_not_found_offer') });
             return false;
         }
         setConfirm({
@@ -77,16 +80,23 @@ export default function OffersController(props){
         setMessage({ show: status, title: title, content: message, otherMessage, callBackFn: callBackFn ? callBackFn : () => setMessage({}) });
     }
 
-    return(
+    const onEdit = () => {
+        if (offer) {
+            navigate(config_path.offer_edit.replace(':id', offer.id), { state: { mode: 'edit' } })
+        }
+    }
+
+    return (
         <>
-            <OffersView 
+            <OffersView
                 showProcessing={showProcessing}
                 message={message}
-                offers={offers}                
+                offers={offers}
                 handleChangePage={handleChangePage}
                 handleChangeRowsPerPage={handleChangeRowsPerPage}
                 setOffer={setOffer}
                 onDelete={onDelete}
+                onEdit={onEdit}
             />
             {confirm && confirm.show && <Confirm
                 isOpen={confirm.show}

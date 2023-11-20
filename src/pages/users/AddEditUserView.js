@@ -56,6 +56,18 @@ export default function AddEditUserView(props) {
                                         defaultValue={user && user.email ? user.email : null}
                                     />
                                 </Grid>
+                                <Grid item xs={12} marginY={1}>
+                                    <Field
+                                        name="phone"
+                                        label={t('phone')}
+                                        component={TextFieldCustom}
+                                        placeholder={t('enter_phone')}
+                                        isEdit={true}
+                                        isValid={true}
+                                        validate={validators.composeValidators(validators.required, validators.mustBeNumberRequired)}
+                                        defaultValue={user && user.phone ? user.phone : null}
+                                    />
+                                </Grid>
                                 <Grid item xs={12} marginY={3}>
                                     <Button id='addEditUser/btnSubmit' size="large" fullWidth variant='contained' onClick={handleSubmit} type='submit'>{t('btn_submit')}</Button>
                                 </Grid>

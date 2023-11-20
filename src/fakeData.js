@@ -5,6 +5,7 @@ export const usersData = [
         last_name: 'Do 01',
         email: 'dohue01@gmail.com',
         role_type: 'ADMIN',
+        phone: '0353094556',
     },
     {
         name: 'Hue Do 02',
@@ -12,6 +13,7 @@ export const usersData = [
         last_name: 'Do 02',
         email: 'dohue02@gmail.com',
         role_type: 'BUSINESS',
+        phone: '0353094556',
     },
 ]
 export const ordersData = [

@@ -34,6 +34,7 @@ export const vietnam = {
     no: 'Huỷ',
     btn_add: 'Tạo mới',
     btn_save: 'Lưu',
+    btn_search: 'Tìm kiếm',
 
     delete_title: 'Xóa',
     delete_desc: 'Bạn có chắc muốn xóa ',
@@ -110,6 +111,8 @@ export const vietnam = {
     enter_first_name: 'Nhập họ',
     enter_middle_name: 'Nhập tên đệm',
     enter_last_name: 'Nhập tên',
+    enter_phone: 'Nhập số điện thoại',
+    phone: 'Số điện thoại',
     can_not_found_user: 'Tài khoản không tồn tại.',
     btn_roles: 'Phân quyền',
     role_type: 'Quyền',
@@ -119,6 +122,7 @@ export const vietnam = {
     products_offers_role: 'Đăng sản phẩm & Ưu đãi',
     delete_user_desc: 'Bạn có chắc chắn muốn xóa tài khoản này ',
     delete_user: 'Xóa tài khoản',
+    enter_user_search_value: 'Nhập tên, email,...',
 
     //orders
     created_date: 'Ngày tạo',
@@ -127,6 +131,7 @@ export const vietnam = {
 
     //offers
     add_offer: 'Tạo mới',
+    edit_offer: 'Sửa',
     can_not_found_offer: 'Ưu đãi không tồn tại.',
     delete_offer: 'Xóa ưu đãi',
     delete_offer_desc: 'Bạn có chắc chắn muốn xóa ưu đãi ',
@@ -142,4 +147,8 @@ export const vietnam = {
     product_code: 'Mã sản phẩm',
     enter_product_code: 'Nhập mã sản phẩm',
     product_content: 'Nội dung',
+    upload_file: 'Tải file/ảnh',
+    upload_file_desc: 'Kéo thả hoặc nhấn để chọn file',
+    enter_product_search_value: 'Nhập tên, mã sản phẩm',
+    add_product: 'Thêm mới',
 }
