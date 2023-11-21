@@ -23,7 +23,7 @@ export default function UsersController(props) {
     const [mode, setMode] = useState(null);
     const [showAddEditForm, setShowAddEditForm] = useState(false);
     const [showRolesForm, setShowRolesForm] = useState(false);
-    const [searchValue, setSearchValue] = useState(null);
+    const [searchValue, setSearchValue] = useState('');
 
     useEffect(() => {
         onLoadData();

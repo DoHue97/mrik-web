@@ -30,13 +30,13 @@ function ContainerCustom(props) {
                         display: 'flex',
                         flexDirection: 'column',
                         py: `${HEADER.H_MOBILE + SPACING}px`,
-                        px: 2,
+                        px: 4,
                         [theme.breakpoints.up('lg')]: {
                             py: `${HEADER.H_DESKTOP + SPACING}px`,
                             width: `calc(100% - ${NAV.WIDTH}px)`,
                         },
                         [theme.breakpoints.down('md')]: {
-                            px: 1,
+                            px: 2,
                         },
                         ...sx,
                     }}

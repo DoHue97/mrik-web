@@ -22,7 +22,7 @@ export default function OffersController(props) {
     const [offer, setOffer] = useState(null);
     const [showOfferDetail, setShowOfferDetail] = useState(false);
     const [confirm, setConfirm] = useState(null);
-    const [searchValue, setSearchValue] = useState(null);
+    const [searchValue, setSearchValue] = useState('');
 
     useEffect(() => {
         onLoadData();

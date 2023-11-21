@@ -7,6 +7,7 @@ export const config_path = {
     users: '/users',
     inventory: '/inventory',
     orders: '/orders',
+    orders_detail: '/orders/detail/:id',
     wallet: '/wallet',
     products: '/products',
     product_add: '/products/add',

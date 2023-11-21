@@ -283,6 +283,7 @@ export const theme = () => {
             error: `0 8px 16px 0 ${alpha(error.main, 0.24)}`,
         },
         shape: { borderRadius: 8 },
+        spacing: 4,
     });
 
     const overrides = (theme) => {
@@ -431,8 +432,8 @@ export const theme = () => {
                         background: grey[0],
                         fontFamily: commonFont.regular,
                         '& .MuiOutlinedInput-input': {
-                            paddingTop: 12,
-                            paddingBottom: 12,
+                            paddingTop: 6,
+                            paddingBottom: 6,
                             fontFamily: commonFont.regular,
                         }
                     },
@@ -445,8 +446,8 @@ export const theme = () => {
                         fontFamily: commonFont.regular,
                         background: grey[0],
                         '& .MuiOutlinedInput-input': {
-                            paddingTop: 12,
-                            paddingBottom: 12,
+                            paddingTop: 6,
+                            paddingBottom: 6,
                             fontFamily: commonFont.medium,
                         }
                     },

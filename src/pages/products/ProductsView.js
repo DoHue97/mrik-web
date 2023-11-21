@@ -45,18 +45,18 @@ export default function ProductsView(props){
     return(        
         <ContainerCustom showProcessing={props.showProcessing} message={props.message}>
             <Grid item xs={12}>
-                <Grid item xs={12} container spacing={1} my={1} alignItems={'center'}>
+                <Grid item xs={12} container spacing={1} my={1} alignItems={'center'} mb={4}>
                     <Grid item xs={12} sm={9} container spacing={1} alignItems={'center'}>
                         <Grid item xs={9}>
                             <TextField
                                 name="products_search"
                                 id="products_search"
                                 placeholder={t('enter_product_search_value')}                                
-                                value={props.search_value}
+                                value={props.searchValue}
                                 onChange={(event) => props.onHandleChange(event.target.value)}
                             />
                         </Grid>
-                        <Grid item xs={3}>
+                        <Grid item xs={3} container justifyContent={'flex-end'}>
                             <Button variant="contained" onClick={() => props.onSearch()}><SearchIcon color={theme.palette.common.white} /></Button>
                         </Grid>
                     </Grid>

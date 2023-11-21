@@ -46,14 +46,14 @@ export default function UsersView(props) {
     return (
         <ContainerCustom showProcessing={props.showProcessing} message={props.message}>
             <Grid item xs={12}>
-                <Grid item xs={12} container spacing={1} my={1} alignItems={'center'}>
+                <Grid item xs={12} container spacing={1} my={1} alignItems={'center'} mb={4}>
                     <Grid item xs={12} sm={9} container spacing={1} alignItems={'center'}>
                         <Grid item xs={9}>
                             <TextField
                                 name="users_search"
                                 id="users_search"
                                 placeholder={t('enter_user_search_value')}                                
-                                value={props.search_value}
+                                value={props.searchValue}
                                 onChange={(event) => props.onHandleChange(event.target.value)}
                             />
                         </Grid>

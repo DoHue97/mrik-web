@@ -31,7 +31,20 @@ export const usersTableConfig = [
 export const ordersTableConfig = [
     { key: 'created_date', label: 'created_date', type: valueType.datetime },
     { key: 'number', label: 'number' },
-    { key: 'state', label: 'state' },
+    // { key: 'state', label: 'state' },
+    {
+        key: 'state', label: 'state', type: valueType.string, component: component.badge, align: align.left, sort: false, action: false, mappingValue: true,
+        badgeConfig: {
+            stylesConfig: {
+                CANCELLED: 'error',
+                NEW: 'info',
+                IN_PROGRESS: 'warning',
+                DELIVERED: 'success',
+                PAID: 'secondary',
+                STOCK_OUT_REQUEST: 'error',
+            }
+        }
+    },
     { key: '', label: '', align: align.right, action: true, actionIcon: MoreIcon, actionType: actionType.func, actionFuncName: 'onShowMenuActions' },
 ]
 

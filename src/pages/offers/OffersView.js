@@ -57,7 +57,7 @@ export default function OffersView(props) {
                                 name="offers_search"
                                 id="offers_search"
                                 placeholder={t('enter_offers_search_value')}                                
-                                value={props.search_value}
+                                value={props.searchValue}
                                 onChange={(event) => props.onHandleChange(event.target.value)}
                             />
                         </Grid>

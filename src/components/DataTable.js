@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { cache } from '../utils/cache';
 import { useTranslation } from 'react-i18next';
 import PropTypes from "prop-types";
-import { formatDateToDDMMYYYYFrEpoch, formatDateToDDMMYYYYHHSSFrEpoch, mappingValue } from '../utils/utils';
+import { formatDateTimeFrEpoch, formatDateToDDMMYYYYFrEpoch, formatDateToDDMMYYYYHHSSFrEpoch, mappingValue } from '../utils/utils';
 import { useNavigate } from 'react-router-dom';
 import { SortIcon } from './Icons';
 
@@ -148,7 +148,7 @@ function EnhancedTableContent(props) {
                         } else if (cell.type == 'date') {
                             formatValue = formatDateToDDMMYYYYFrEpoch(value, false);
                         } else if (cell.type == 'datetime') {
-                            formatValue = formatDateToDDMMYYYYHHSSFrEpoch(value);
+                            formatValue = formatDateTimeFrEpoch(value, null, true);
                         } else {
                             if (cell.mappingValue) {
                                 formatValue = t(mappingValue(value));
@@ -167,13 +167,13 @@ function EnhancedTableContent(props) {
                             if (badgeConfig && badgeConfig.stylesConfig && badgeConfig.stylesConfig[value]) {
                                 let _color = badgeConfig.stylesConfig[value] ? badgeConfig.stylesConfig[value] : null;
                                 customStyle = {
-                                    backgroundColor: _color ? palette[_color].light : undefined,
+                                    backgroundColor: _color ? palette[_color].lighter : undefined,
                                     color: _color ? palette[_color].main : undefined
                                 }
                             }
                             return (
                                 <TableCell key={index} align={cell.align}>
-                                    <Chip icon={icon ? icon() : undefined} variant='customOutlined' size='small' label={formatValue} sx={{ ...customStyle, lineHeight: "unset" }} />
+                                    <Chip icon={icon ? icon() : undefined} size='small' label={formatValue} sx={{ ...customStyle, lineHeight: "unset", borderRadius: 0.5 }} />
                                 </TableCell>
                             )
                         } else if (cell.action) {

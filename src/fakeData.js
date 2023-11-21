@@ -32,7 +32,25 @@ export const ordersData = [
     {
         id: 'O003',
         number: 'O003',
-        state: 'IN_PROGRESS',
+        state: 'PAID',
+        created_date: 1699971239,
+    },
+    {
+        id: 'O004',
+        number: 'O004',
+        state: 'STOCK_OUT_REQUEST',
+        created_date: 1699971239,
+    },
+    {
+        id: 'O005',
+        number: 'O005',
+        state: 'DELIVERED',
+        created_date: 1699971239,
+    },
+    {
+        id: 'O006',
+        number: 'O006',
+        state: 'CANCELLED',
         created_date: 1699971239,
     },
 ]

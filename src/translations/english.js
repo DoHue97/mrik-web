@@ -37,7 +37,7 @@ export const english = {
     btn_search: 'Search',
 
     delete_title: 'Delete',
-    delete_desc: 'Are you sure delete ',
+    delete_desc: 'Are you sure delete {0} ?',
     can_not_found_record: 'Can not found record to delete.',
 
     DAYS: {
@@ -86,6 +86,17 @@ export const english = {
         , NOV: 'November'
         , DEC: 'December'
     },
+    //statuses
+    new: 'New',
+    draft: 'Draft',
+    cancelled: 'Cancelled',
+    completed: 'Completed',
+    pending: 'Pending',
+    in_progress: 'In progress',
+    delivered: 'Delivered',
+    paid:'Paid',
+    stock_out_request: 'Stock out request',
+
     //login
     email: 'Email',
     password: 'Password',
@@ -129,6 +140,10 @@ export const english = {
     created_date: 'Created date',
     number: 'Number',
     state: 'State',
+    btn_approve: 'Approve',
+    enter_orders_search_value: 'Enter order no, customer name, phone ...',
+    approve_desc: 'Are you sure approve {0}?',
+    approve_title: 'Approve',
 
     //offers
     add_offer: 'Add Offer',

@@ -1,26 +1,48 @@
-import { Grid, Hidden, Typography, Popover, Stack, IconButton } from "@mui/material";
+import { Grid, Hidden, Typography, Popover, Stack, IconButton, TextField, Button, useTheme, Box, Select, MenuItem, TablePagination } from "@mui/material";
 import React, { useState } from "react";
 import ContainerCustom from "../../components/Container";
 import { useTranslation } from "react-i18next";
 import DataTable from "../../components/DataTable";
 import { ordersTableConfig } from "../../datatable.config";
-import { EditIcon, DeleteIcon, MoreIcon } from "../../components/Icons";
+import { EditIcon, DeleteIcon, MoreIcon, CheckDoubleFillIcon, SearchIcon } from "../../components/Icons";
 import CardComponent from "../../components/Card";
 import { formatDateToDDMMYYYYHHMMFrEpoch } from "../../utils/utils";
 
 export default function OrdersView(props) {
     const { t } = useTranslation();
-    const { orders } = props;
+    const theme = useTheme();
+    const { orders, searchValue, setState, state, } = props;
     const [openMenu, setOpenMenu] = useState(null);
     const [rowsPerPage, setRowsPerPage] = useState(orders && orders.paging && orders.paging.size ? orders.paging.size : 10);
 
     const menuActionItem = [
         { label: 'btn_edit', icon: <EditIcon />, onClick: props.onEdit, id: 'order_edit' },
+        { label: 'btn_approve', icon: <CheckDoubleFillIcon />, onClick: props.onApprove, id: 'order_approve' },
         { label: 'btn_delete', icon: <DeleteIcon />, onClick: props.onDelete, id: 'order_delete' }
+    ]
+
+    const statuses = [
+        {
+            label: t('new'),
+            value: 'NEW',
+        },
+        {
+            label: t('delivered'),
+            value: 'DELIVERED',
+        },
+        {
+            label: t('paid'),
+            value: 'PAID',
+        },
+        {
+            label: t('stock_out_request'),
+            value: 'STOCK_OUT_REQUEST',
+        },
     ]
 
     const handleOpenMenu = (event, row) => {
         console.log("AAA event: ", event)
+        event.stopPropagation();
         if(props.setOrder) props.setOrder(row);
         setOpenMenu(event.target)
     }
@@ -46,6 +68,40 @@ export default function OrdersView(props) {
     return (
         <ContainerCustom showProcessing={props.showProcessing} message={props.message}>
             <Grid item xs={12}>
+                <Grid item xs={12} my={1} mb={4}>
+                    <Grid item xs={12} container spacing={1}>
+                        <Grid item xs={12} sm={11} container spacing={1}>
+                            <Grid item xs={12} md={6} mb={1}>
+                                <TextField
+                                    name="orders_search"
+                                    id="orders_search"
+                                    placeholder={t('enter_orders_search_value')}                                
+                                    value={searchValue}
+                                    onChange={(event) => props.onHandleChange(event.target.value)}
+                                />
+                            </Grid>
+                            <Grid item xs={12} md={6}>
+                                <Select 
+                                    defaultValue={state ? state : undefined}
+                                    value={state ? state : undefined}
+                                    onChange={(e) => setState(e.target.value)}
+                                >
+                                    <MenuItem value="">{t('Select')}</MenuItem>
+                                    {statuses.map((item, index) => {
+                                        return(
+                                            <MenuItem key={index} value={item.value}>{item.label}</MenuItem>
+                                        )
+                                    })}
+                                </Select>
+                            </Grid>
+                        </Grid>
+                        <Grid item xs={12} sm={1} container justifyContent={'flex-end'}>
+                            <Button variant="contained" onClick={() => props.onSearch()}>
+                                <SearchIcon color={theme.palette.common.white} />
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
                 <Hidden mdDown>
                     <DataTable
                         tableConfig={ordersTableConfig}
@@ -55,6 +111,7 @@ export default function OrdersView(props) {
                         onShowMenuActions={handleOpenMenu}
                         handleChangeRowsPerPage={handleChangeRowsPerPage}
                         handleChangePage={handleChangePage}
+                        onShowDetail={props.onShowDetail}
                     />
                 </Hidden>
                 <Hidden mdUp>
@@ -65,6 +122,14 @@ export default function OrdersView(props) {
                             </Grid>
                         )
                     })}
+                    <TablePagination
+                        component="div"
+                        count={orders.paging.total}
+                        onPageChange={handleChangePage}
+                        rowsPerPage={rowsPerPage}
+                        page={orders.paging.page ? orders.paging.page - 1 : 0}
+                        onRowsPerPageChange={handleChangeRowsPerPage}
+                    />
                 </Hidden>
             </Grid>
             {menuActionItem && menuActionItem.length > 0 && <Popover id='menu-actions-users'

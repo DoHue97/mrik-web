@@ -37,7 +37,7 @@ export const vietnam = {
     btn_search: 'Tìm kiếm',
 
     delete_title: 'Xóa',
-    delete_desc: 'Bạn có chắc muốn xóa ',
+    delete_desc: 'Bạn có chắc muốn xóa {0} ?',
     can_not_found_record: 'Không tìm thấy bản ghi cần xóa.',
 
     DAYS: {
@@ -86,6 +86,17 @@ export const vietnam = {
         , NOV: 'Tháng 11'
         , DEC: 'Tháng 12'
     },
+    //statuses
+    new: 'Mới',
+    draft: 'Nháp',
+    cancelled: 'Đã hủy',
+    completed: 'Hoàn thành',
+    pending: 'Chờ duyệt',
+    in_progress: 'Đang thực hiện',
+    delivered: 'Đã giao hàng',
+    paid: 'Đã thanh toán',
+    stock_out_request: 'Số lượng hàng không đủ',
+
     //login
     email: 'Email',
     password: 'Mật khẩu',
@@ -128,6 +139,10 @@ export const vietnam = {
     created_date: 'Ngày tạo',
     number: 'Số đơn hàng',
     state: 'Trạng thái',
+    btn_approve: 'Duyệt',
+    enter_orders_search_value: 'Nhập số đơn hàng, tên khách hàng, sđt ...',
+    approve_desc: 'Bạn có chắc muốn duyệt {0} không?',
+    approve_title: 'Duyệt',
 
     //offers
     add_offer: 'Tạo mới',

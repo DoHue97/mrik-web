@@ -268,6 +268,12 @@ export function mappingValue(value) {
             translateValue = 'invoice'
         } else if (value == 'IN_PROGRESS') {
             translateValue = 'in_progress'
+        } else if (value == 'PAID') {
+            translateValue = 'paid'
+        } else if (value == 'DELIVERED') {
+            translateValue = 'delivered'
+        } else if (value == 'STOCK_OUT_REQUEST') {
+            translateValue = 'stock_out_request'
         } else {
             translateValue = value
         }
@@ -275,15 +281,29 @@ export function mappingValue(value) {
     return translateValue;
 }
 
-export function mappingRoleTypes(type, t){
-    if(type == 'ADMIN'){
+export function mappingRoleTypes(type, t) {
+    if (type == 'ADMIN') {
         return t('admin_role');
-    } else if(type == 'ACCOUNTANT'){
+    } else if (type == 'ACCOUNTANT') {
         return t('accountant_role')
-    } else if(type == 'BUSINESS'){
+    } else if (type == 'BUSINESS') {
         return t('business_role')
-    } else if(type == 'PRODUCTS_OFFERS'){
+    } else if (type == 'PRODUCTS_OFFERS') {
         return t('products_offers_role')
     }
     else return type;
+}
+
+export function replaceParamTranslation(string, params) {
+    let str = string;
+    if (!str) {
+        return string;
+    }
+    if (params && params.length > 0) {
+        for (let i = 0; i < params.length; i++) {
+            let value = params[i];
+            str = str.replace(`{${i}}`, value);
+        }
+    }
+    return str;
 }

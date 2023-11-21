@@ -16,6 +16,7 @@ import PageNotFound from "../pages/PageNotFound";
 import AccessDenied from "../pages/AccessDenied";
 import RequestWithDrawalController from "../pages/request-drawal/RequestWithDrawalController";
 import AddEditProductController from "../pages/products/AddEditProductController";
+import OrderDetailController from "../pages/orders/OrderDetailController";
 
 export default function Routers(props) {
     const navigate = useNavigate();
@@ -39,6 +40,7 @@ export default function Routers(props) {
             <Route path={config_path.product_add} element={<CheckPermission><AddEditProductController /></CheckPermission>} />
             <Route path={config_path.product_edit} element={<CheckPermission><AddEditProductController /></CheckPermission>} />
             <Route path={config_path.orders} element={<CheckPermission><OrdersController /></CheckPermission>} />
+            <Route path={config_path.orders_detail} element={<CheckPermission><OrderDetailController /></CheckPermission>} />
             <Route path={config_path.wallet} element={<CheckPermission><WalletController /></CheckPermission>} />
             <Route path={config_path.inventory} element={<CheckPermission><InventoryController /></CheckPermission>} />
             <Route path={config_path.offers} element={<CheckPermission><OffersController /></CheckPermission>} />

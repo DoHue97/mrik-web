@@ -23,7 +23,7 @@ export default function ProductsController(props) {
     });
     const [product, setProduct] = useState(null);
     const [confirm, setConfirm] = useState(null);
-    const [searchValue, setSearchValue] = useState(null);
+    const [searchValue, setSearchValue] = useState('');
 
     useEffect(() => {
         onLoadData();
