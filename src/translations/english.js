@@ -144,6 +144,9 @@ export const english = {
     enter_orders_search_value: 'Enter order no, customer name, phone ...',
     approve_desc: 'Are you sure approve {0}?',
     approve_title: 'Approve',
+    btn_reject: 'Reject',
+    reject_order_desc: 'Are you sure reject the order {0}?',
+    reject_order_title: 'Reject order',
 
     //offers
     add_offer: 'Add Offer',

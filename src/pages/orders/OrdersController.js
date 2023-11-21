@@ -123,6 +123,32 @@ export default function OrdersController(props) {
         navigate(config_path.orders_detail.replace(':id', row.id))
     }
 
+    const onReject = () => {
+        console.log("AAA onReject order: ", order)
+        if(!order) {
+            showMessage({ status: true, message: t('can_not_found_record')});
+            return false;
+        }
+        setConfirm({
+            show: true,
+            message: replaceParamTranslation(t('reject_order_desc'), [order.number]),
+            title: t('reject_order_title'),
+            actionTitle: t('yes'),
+            closeTitle: t('no'),
+            onAction: () => onRejectProcess(order),
+            onClose: () => setConfirm({}),
+        });
+    }
+
+    const onRejectProcess = async (order) => {
+        console.log("AAAA onRejectProcess order: ", order);
+        try {
+            setConfirm({})
+        } catch (error) {
+            console.log("AAAAA onRejectProcess error: ", error)
+        }
+    }
+
     return (
         <>
             <OrdersView
@@ -140,6 +166,7 @@ export default function OrdersController(props) {
                 onApprove={onApprove}
                 onShowDetail={onShowDetail}
                 setState={setState}
+                onReject={onReject}
             />
             {confirm && confirm.show && <Confirm
                 isOpen={confirm.show}

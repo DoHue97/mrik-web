@@ -4,7 +4,7 @@ import ContainerCustom from "../../components/Container";
 import { useTranslation } from "react-i18next";
 import DataTable from "../../components/DataTable";
 import { ordersTableConfig } from "../../datatable.config";
-import { EditIcon, DeleteIcon, MoreIcon, CheckDoubleFillIcon, SearchIcon } from "../../components/Icons";
+import { EditIcon, DeleteIcon, MoreIcon, CheckDoubleFillIcon, SearchIcon, CloseIcon } from "../../components/Icons";
 import CardComponent from "../../components/Card";
 import { formatDateToDDMMYYYYHHMMFrEpoch } from "../../utils/utils";
 
@@ -18,6 +18,7 @@ export default function OrdersView(props) {
     const menuActionItem = [
         { label: 'btn_edit', icon: <EditIcon />, onClick: props.onEdit, id: 'order_edit' },
         { label: 'btn_approve', icon: <CheckDoubleFillIcon />, onClick: props.onApprove, id: 'order_approve' },
+        { label: 'btn_reject', icon: <CloseIcon color={theme.palette.error.main}/>, onClick: props.onReject, id: 'order_reject' },
         { label: 'btn_delete', icon: <DeleteIcon />, onClick: props.onDelete, id: 'order_delete' }
     ]
 

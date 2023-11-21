@@ -37,7 +37,7 @@ export default function AddEditProductView(props) {
                     render={({ handleSubmit }) => {
                         return (
                             <Grid item xs={12}>
-                                <Grid item xs={12} marginY={2} container spacing={1}>
+                                <Grid item xs={12} marginY={2} container spacing={2}>
                                     <Grid item xs={12} sm={8}>
                                         <Grid item xs={12} my={1}>
                                             <Field

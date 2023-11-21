@@ -49,8 +49,8 @@ export default function OffersView(props) {
             {/* <Grid item xs={12} textAlign={'right'} my={1}>
                 <Button variant="contained" onClick={() => navigate(config_path.offer_add)}>+ {t('btn_add')}</Button>
             </Grid> */}
-            <Grid item xs={12} container spacing={1}>
-                <Grid item xs={12} container spacing={1} my={1} alignItems={'center'}>
+            <Grid item xs={12}>
+                <Grid item xs={12} container spacing={1} my={1} alignItems={'center'} mb={4}>
                     <Grid item xs={12} sm={9} container spacing={1} alignItems={'center'}>
                         <Grid item xs={9}>
                             <TextField

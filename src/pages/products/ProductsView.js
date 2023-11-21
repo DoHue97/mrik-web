@@ -56,7 +56,7 @@ export default function ProductsView(props){
                                 onChange={(event) => props.onHandleChange(event.target.value)}
                             />
                         </Grid>
-                        <Grid item xs={3} container justifyContent={'flex-end'}>
+                        <Grid item xs={3}>
                             <Button variant="contained" onClick={() => props.onSearch()}><SearchIcon color={theme.palette.common.white} /></Button>
                         </Grid>
                     </Grid>

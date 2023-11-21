@@ -143,6 +143,9 @@ export const vietnam = {
     enter_orders_search_value: 'Nhập số đơn hàng, tên khách hàng, sđt ...',
     approve_desc: 'Bạn có chắc muốn duyệt {0} không?',
     approve_title: 'Duyệt',
+    btn_reject: 'Từ chối',
+    reject_order_desc: 'Bạn có chắc muốn từ chối đơn hàng {0}?',
+    reject_order_title: 'Từ chối đơn hàng',
 
     //offers
     add_offer: 'Tạo mới',
