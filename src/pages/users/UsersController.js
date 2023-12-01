@@ -4,6 +4,7 @@ import { usersData } from "../../fakeData";
 import { useTranslation } from "react-i18next";
 import AddEditUserController from "./AddEditUserController";
 import Confirm from "../../components/Confirm";
+import { replaceParamTranslation } from "../../utils/utils";
 
 export default function UsersController(props) {
     const { t } = useTranslation();
@@ -60,7 +61,7 @@ export default function UsersController(props) {
         }
         setConfirm({
             show: true,
-            message: t('delete_desc') + user.name + "?",
+            message: replaceParamTranslation(t('delete_desc'), [user.name]),
             title: t('delete_title'),
             actionTitle: t('yes'),
             closeTitle: t('no'),

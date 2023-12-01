@@ -147,6 +147,8 @@ export const english = {
     btn_reject: 'Reject',
     reject_order_desc: 'Are you sure reject the order {0}?',
     reject_order_title: 'Reject order',
+    select_order_status: 'Select status',
+    select: 'Select',
 
     //offers
     add_offer: 'Add Offer',

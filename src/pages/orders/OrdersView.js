@@ -1,4 +1,4 @@
-import { Grid, Hidden, Typography, Popover, Stack, IconButton, TextField, Button, useTheme, Box, Select, MenuItem, TablePagination } from "@mui/material";
+import { Grid, Hidden, Typography, Popover, Stack, IconButton, TextField, Button, useTheme, Box, Select, MenuItem, TablePagination, OutlinedInput } from "@mui/material";
 import React, { useState } from "react";
 import ContainerCustom from "../../components/Container";
 import { useTranslation } from "react-i18next";
@@ -84,10 +84,11 @@ export default function OrdersView(props) {
                             <Grid item xs={12} md={6}>
                                 <Select 
                                     defaultValue={state ? state : undefined}
-                                    value={state ? state : undefined}
+                                    value={state ? state : ""}
                                     onChange={(e) => setState(e.target.value)}
+                                    placeholder={t('select_order_status')}
                                 >
-                                    <MenuItem value="">{t('Select')}</MenuItem>
+                                    <MenuItem value="">{t('select_order_status')}</MenuItem>
                                     {statuses.map((item, index) => {
                                         return(
                                             <MenuItem key={index} value={item.value}>{item.label}</MenuItem>

@@ -432,8 +432,8 @@ export const theme = () => {
                         background: grey[0],
                         fontFamily: commonFont.regular,
                         '& .MuiOutlinedInput-input': {
-                            paddingTop: 6,
-                            paddingBottom: 6,
+                            paddingTop: 12,
+                            paddingBottom: 12,
                             fontFamily: commonFont.regular,
                         }
                     },
@@ -446,8 +446,8 @@ export const theme = () => {
                         fontFamily: commonFont.regular,
                         background: grey[0],
                         '& .MuiOutlinedInput-input': {
-                            paddingTop: 6,
-                            paddingBottom: 6,
+                            paddingTop: 12,
+                            paddingBottom: 12,
                             fontFamily: commonFont.medium,
                         }
                     },

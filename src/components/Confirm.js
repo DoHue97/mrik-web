@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton, Typography } from "@mui/material";
+import { Button, Dialog, DialogActions, DialogContent, Stack, DialogTitle, IconButton, Typography } from "@mui/material";
 import { CloseIcon } from "./Icons";
 
 function Confirm(props) {
@@ -13,21 +13,23 @@ function Confirm(props) {
             maxWidth={maxWidth ? maxWidth : 'sm'}
             PaperProps={{
                 sx: {
-                    paddingX: 2,
-                    paddingY: 2,
+                    paddingX: 5,
+                    paddingY: 3,
                 }
             }}
         >
-            <IconButton sx={{
-                position: 'absolute',
-                right: 5,
-                top: 0,
-                backgroundColor: 'unset',
-                zIndex: 10,
-            }} onClick={() => onClose()}>
-                <CloseIcon />
-            </IconButton>
-            {title && <DialogTitle sx={{padding: 1, marginRight: 3}}>{title}</DialogTitle>}
+            <Stack direction={'row'} alignItems='center'>
+                <Stack flex={1}>
+                    {title && <DialogTitle sx={{padding: 1, marginRight: 3}}>{title}</DialogTitle>}
+                </Stack>
+                <Stack>
+                    <IconButton sx={{
+                        backgroundColor: 'unset',
+                    }} onClick={() => onClose()}>
+                        <CloseIcon />
+                    </IconButton>
+                </Stack>
+            </Stack>            
             <DialogContent>
                 <Typography>{message}</Typography>
                 {otherMessage}

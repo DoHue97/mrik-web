@@ -17,13 +17,11 @@ export default function LoginView(props) {
 
     return (
         <ContainerCustom showProcessing={props.showProcessing} message={props.message} hideHeader={true} hideSideBar={true}>
-            <Grid item xs={12} container justifyContent={'center'}>
-                <Grid item xs={12} sm={6} md={4} sx={{
+            <Grid item xs={12} container justifyContent={'center'} alignItems='center' height={'100%'} style={{display: 'flex'}}>
+                <Grid item xs={12} sm={6} md={4} lg={3} sx={{
                     background: theme.palette.background.paper,
-                    margin: 5,
-                    px: 4,
-                    py: 2,
-                    borderRadius: 2
+                    padding: 10,
+                    borderRadius: 2,
                 }}>
                     <Typography variant="h4">{t('sign_in_desc')}</Typography>
                     <Form
@@ -31,7 +29,7 @@ export default function LoginView(props) {
                         render={({ handleSubmit }) => {
                             return (
                                 <Grid item xs={12} container justifyContent={'center'}>
-                                    <Grid item xs={12} marginY={2}>
+                                    <Grid item xs={12} marginY={8}>
                                         <Field
                                             name="email"
                                             label={t('email')}
@@ -60,7 +58,7 @@ export default function LoginView(props) {
                                     {/* <Grid item xs={12} container justifyContent={'flex-end'} mt={1}>
                                         <Button id='loginEmail/bntForgotPassword' onClick={() => navigate(config_path.forgot_password)} variant='text'>{t('forgot_password')}</Button>
                                     </Grid> */}
-                                    <Grid item xs={12} marginY={3}>
+                                    <Grid item xs={12} marginY={8}>
                                         <Button id='loginEmail/btnSubmit' size="large" fullWidth variant='contained' onClick={handleSubmit} type='submit'>{t('btn_submit')}</Button>
                                     </Grid>
                                 </Grid>

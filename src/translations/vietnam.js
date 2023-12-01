@@ -146,6 +146,8 @@ export const vietnam = {
     btn_reject: 'Từ chối',
     reject_order_desc: 'Bạn có chắc muốn từ chối đơn hàng {0}?',
     reject_order_title: 'Từ chối đơn hàng',
+    select_order_status: 'Chọn trạng thái',
+    select: 'Chọn',
 
     //offers
     add_offer: 'Tạo mới',

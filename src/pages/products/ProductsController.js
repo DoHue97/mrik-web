@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { config_path } from "../../router/config.path";
 import Confirm from "../../components/Confirm";
+import { replaceParamTranslation } from "../../utils/utils";
 
 export default function ProductsController(props) {
     const navigate = useNavigate();
@@ -68,7 +69,7 @@ export default function ProductsController(props) {
         }
         setConfirm({
             show: true,
-            message: t('delete_desc') + product.name + "?",
+            message: replaceParamTranslation(t('delete_desc'), [product.name]),
             title: t('delete_title'),
             actionTitle: t('yes'),
             closeTitle: t('no'),
