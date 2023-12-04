@@ -37,7 +37,7 @@ export default function AddEditProductView(props) {
                     render={({ handleSubmit }) => {
                         return (
                             <Grid item xs={12}>
-                                <Grid item xs={12} marginY={2} container spacing={2}>
+                                <Grid item xs={12} marginY={2} container alignItems={'center'} spacing={2}>
                                     <Grid item xs={12} sm={8}>
                                         <Grid item xs={12} my={1}>
                                             <Field
@@ -61,11 +61,19 @@ export default function AddEditProductView(props) {
                                                 validate={validators.composeValidators(validators.required)}
                                             />
                                         </Grid>
+                                        <Grid item xs={12} my={1}>
+                                            <Field
+                                                name="description"
+                                                label={t('product_description')}
+                                                component={TextAreaCustom}
+                                                isEdit={true}
+                                            />
+                                        </Grid>
                                     </Grid>
                                     <Grid item xs={12} sm={4}>
                                         <Box width={'100%'} position={'relative'} border={'1px solid'}
                                             borderColor={alpha(theme.palette.grey[500], 0.24)}
-                                            borderRadius={2} sx={{ cursor: 'pointer'}} maxHeight={200} overflow={'hidden'} display={'flex'} justifyContent={'center'} alignItems={'center'}
+                                            borderRadius={2} sx={{ cursor: 'pointer'}} maxHeight={300} overflow={'hidden'} display={'flex'} justifyContent={'center'} alignItems={'center'}
                                         >
                                             <img src={file && file.uri ? file.uri : '/assets/images/no-image.jpg'} alt='No image' style={{ borderRadius: 16 }} onClick={() => setShowUploadFile(true)} />
                                             {file && file.uri && <Box position={'absolute'} right={0} top={0} onClick={() => props.setFile(null)}>
@@ -80,14 +88,6 @@ export default function AddEditProductView(props) {
                                             </Box>}
                                         </Box>
                                     </Grid>
-                                </Grid>
-                                <Grid item xs={12} my={1}>
-                                    <Field
-                                        name="description"
-                                        label={t('product_description')}
-                                        component={TextAreaCustom}
-                                        isEdit={true}
-                                    />
                                 </Grid>
                                 <Grid item xs={12}>
                                     <Typography mb={1} variant="body2">{t('product_content')}</Typography>

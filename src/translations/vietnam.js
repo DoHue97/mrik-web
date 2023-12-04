@@ -15,6 +15,9 @@ export const vietnam = {
     request_withdrawal: 'Quản lý yêu cầu rút tiền',
     offers: 'Quản lý chương trình/chính sách ưu đãi',
     inventory: 'Quản lý xuất/nhập kho',
+    discounts: 'Quản lý chiết khấu',
+    reports: 'Báo cáo',
+    reports_customer_revenue_level: 'Báo cáo doanh thu khách hàng theo level',
 
     welcome: 'Xin chào 👋',
 

@@ -123,7 +123,7 @@ function OfferItem(props) {
     const { item, handleOpenMenu } = props;
 
     return (
-        <Card paddingX={2} paddingY={2}>
+        <Card paddingX={4} paddingY={2}>
             <Stack width={'100%'} direction={'row'} alignItems={'center'} spacing={1}>
                 <Stack flex={1}>
                     <Typography variant="body2">{item.name}</Typography>

@@ -15,6 +15,9 @@ export const english = {
     request_withdrawal: 'Request a with drawal',
     offers: 'Offers',
     inventory: 'Inventory',
+    discounts: 'Discounts',
+    reports: 'Reports',
+    reports_customer_revenue_level: 'Customer revenue by level',
 
     welcome: 'Hi, Welcome back 👋',
 

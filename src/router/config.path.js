@@ -18,6 +18,8 @@ export const config_path = {
     page_not_found: '/page-not-found',
     access_denied: '/access-denied',
     request_with_drawal: '/request-with-drawal',
+    discounts: '/discounts',
+    report_customer_revenue_level: '/reports/customer-revenue-level',
 }
 
 const _IN_SESSION = 0;

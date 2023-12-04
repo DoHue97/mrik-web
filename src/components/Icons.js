@@ -1,7 +1,7 @@
 import React from "react";
 import { RiMenuFill, RiBarChartBoxFill, RiNotification3Fill, RiTimeLine, RiCheckDoubleLine, RiShoppingCartFill, RiEyeOffLine, RiEyeLine,
     RiCloseLine, RiExpandUpDownLine, RiUser3Fill, RiMoreLine, RiEditLine, RiDeleteBinLine, RiBox3Fill, RiWallet3Fill, RiShieldUserLine, RiGiftFill, 
-    RiWalletFill, RiFileDownloadLine, RiSearch2Line,
+    RiWalletFill, RiFileDownloadLine, RiSearch2Line, RiFileList2Fill, 
 } from 'react-icons/ri';
 import { GetIconColor } from '../theme/main_style';
 
@@ -39,3 +39,4 @@ export const OffersIcon = (props) => { return <RiGiftFill color={props.color ? p
 export const RequestWithDrawalIcon = (props) => { return <RiWalletFill color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
 export const FileDownloadIcon = (props) => { return <RiFileDownloadLine color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
 export const SearchIcon = (props) => { return <RiSearch2Line color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
+export const ReportsIcon = (props) => { return <RiFileList2Fill color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}

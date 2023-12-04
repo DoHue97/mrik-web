@@ -17,6 +17,8 @@ import AccessDenied from "../pages/AccessDenied";
 import RequestWithDrawalController from "../pages/request-drawal/RequestWithDrawalController";
 import AddEditProductController from "../pages/products/AddEditProductController";
 import OrderDetailController from "../pages/orders/OrderDetailController";
+import DiscountsController from "../pages/discounts/DiscountsController";
+import ReportCustomerRevenueLevelController from "../pages/reports/ReportCustomerRevenueLevelController";
 
 export default function Routers(props) {
     const navigate = useNavigate();
@@ -47,6 +49,8 @@ export default function Routers(props) {
             <Route path={config_path.offer_add} element={<CheckPermission><AddEditOfferController /></CheckPermission>} />
             <Route path={config_path.offer_edit} element={<CheckPermission><AddEditOfferController /></CheckPermission>} />
             <Route path={config_path.request_with_drawal} element={<CheckPermission><RequestWithDrawalController /></CheckPermission>} />
+            <Route path={config_path.discounts} element={<CheckPermission><DiscountsController /></CheckPermission>} />
+            <Route path={config_path.report_customer_revenue_level} element={<CheckPermission><ReportCustomerRevenueLevelController /></CheckPermission>} />
             <Route path={config_path.page_not_found} element={<PageNotFound />} />
             <Route path={config_path.access_denied} element={<AccessDenied />} />
             <Route path={config_path.home} element={<DashboardPage />} />
