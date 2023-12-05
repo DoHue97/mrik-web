@@ -1,7 +1,7 @@
 import querystring from 'querystring';
-import jwtDecode from 'jwt-decode';
+// import jwtDecode from 'jwt-decode';
 import { ACCESS_TOKEN, REFRESH_TOKEN } from '../utils/common';
-
+const jwtDecode = require('jwt-decode')
 /** local variables */
 let _storeKVFn;
 let _getKVFn;
@@ -19,11 +19,20 @@ export const httpUtil = {
     get,
     post,
     put,
+    sendDelete,
     getSession,
     cleanSession,
     refreshToken,
     getToken,
     startSession,
+}
+
+function json2Obj(str) {
+    try {
+        return JSON.parse(str);
+    } catch (e) {
+        return null;
+    }
 }
 
 async function setupChannel({
@@ -85,7 +94,6 @@ async function refreshToken() {
         let response = await postRefreshToken({
             resourcePath: path,
             body: {},
-            isBackend: _isBackend
         });
         console.log('AAAAAAAAAAAAAAAAAA response:', response);
         if (response.status == "200") {
@@ -244,7 +252,7 @@ async function get({
     console.log("withAccessToken:", withAccessToken);
     console.log("unauthorize:", unauthorize);
     try {
-        let uri = getURI(resourcePath, isMiddleware);
+        let uri = getURI(resourcePath);
         var options = {};
         options.headers = initOptionHeader();
         options.method = "GET";
@@ -420,6 +428,80 @@ async function put({
         } else if (response.status == '401') {
             var refreshResult = await refreshToken(logOutIfSessionInvalid);
             console.log('AAAAAAAAAAAAAAAAAA PUT refreshResult:', refreshResult);
+            if (refreshResult.code == 'OK') {
+                options.headers = { ...options.headers, Authorization: "Bearer " + refreshResult.data.access_token };
+                options = { ...options, headers: options.headers };
+                response = await _fetchFn(uri, options);
+                let bodyText = await response.text()
+                if (response.status == '200') {
+                    return { code: "OK", data: bodyText ? json2Obj(bodyText) : null };
+                }
+                return { code: response.status, bodyText: bodyText, error: json2Obj(bodyText) };
+            } else {
+                validateForceLogout(refreshResult, true);
+            }
+        } else {
+            let bodyText = await response.text()
+            validateForceLogout(response, logOutIfSessionInvalid);
+            return { code: response.status, bodyText: bodyText, error: json2Obj(bodyText) };
+        }
+    } catch (e) {
+        let bodyText = await e.text();
+        return { code: e.status, bodyText: bodyText, error: returnText ? bodyText : json2Obj(bodyText) };
+    }
+}
+
+async function sendDelete({
+    resourcePath,
+    queryParams,
+    withAccessToken = false,
+    withoutApikey = false,
+    logOutIfSessionInvalid = true,
+    isRefreshToken,
+    accessToken,
+    returnText,
+    body,
+}) {
+    try {
+        let uri = getURI(resourcePath);
+        var options = {};
+        options.headers = initOptionHeader();
+        options.method = "DELETE";
+        options.credentials = 'omit';
+        if (withAccessToken == true || logOutIfSessionInvalid == true || isRefreshToken == true) {
+            console.log("AAAAAAAAAAAAAAAAAAAA b111111111111111111111:");
+            if (isRefreshToken)
+                options.headers['Authorization'] = 'Bearer ' + _refreshToken;
+            else if (accessToken) {
+                options.headers['Authorization'] = 'Bearer ' + accessToken;
+            }
+            else
+                options.headers['Authorization'] = 'Bearer ' + _accessToken;
+        }
+        else if (!withoutApikey) {
+            options.headers['api_key'] = _apiKey;
+        }
+        console.log("options:", options);
+        if (body)
+            options.body = JSON.stringify(body);
+        
+        if (queryParams)
+            uri = uri + '?' + querystring.encode(queryParams);
+        console.log('DELETE: ', uri, options);
+        let response = await _fetchFn(uri, options);
+        if (response.status == '200') {
+            if (returnText) {
+                let bodyText = await response.text()
+                console.log('Response - ', response.status, ' - Body text:', bodyText);
+                return { code: "OK", data: bodyText };
+            } else {
+                let bodyText = await response.text()
+                console.log('Response - ', response.status, ' - Body:', json2Obj(bodyText));
+                return { code: "OK", data: bodyText ? json2Obj(bodyText) : null };
+            }
+        } else if (response.status == '401') {
+            var refreshResult = await refreshToken(logOutIfSessionInvalid);
+            console.log('AAAAAAAAAAAAAAAAAA DELETE refreshResult:', refreshResult);
             if (refreshResult.code == 'OK') {
                 options.headers = { ...options.headers, Authorization: "Bearer " + refreshResult.data.access_token };
                 options = { ...options, headers: options.headers };

@@ -4,6 +4,8 @@ export const connection = {
         secure: false,
         expires: 0
     },
+    apiKey: '',
+    server: '',
 };
 
 export const HEADER = {

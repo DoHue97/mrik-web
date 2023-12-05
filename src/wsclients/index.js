@@ -1,15 +1,20 @@
+import { httpUtil } from "./httpUtil";
 import { inventory } from "./inventory";
 import { offers } from "./offers";
 import { orders } from "./orders";
 import { products } from "./products";
 import { users } from "./users";
-import { wallet } from "./wallet";
+import { wallets } from "./wallets";
 
 export default {
     orders: orders,
-    wallet: wallet,
+    wallets: wallets,
     products: products,
     users: users,
     inventory: inventory,
     offers: offers,
+    setupChannel: httpUtil.setupChannel,
+    getSession: httpUtil.getSession,
+    startSession: httpUtil.startSession,
+    cleanSession: httpUtil.startSession,
 }

@@ -4,15 +4,19 @@ import { useTranslation } from 'react-i18next'
 import Routers from "./router/Routers";
 import theme from './theme';
 import { cache } from './utils/cache';
-import { portal_config } from "./portal.config";
-import { initLanguage } from "./utils/common";
+import { connection, portal_config } from "./portal.config";
+import { getData, initLanguage, logOut, saveDataIntoAsyncStore } from "./utils/common";
+import services from './wsclients'
+import { useNavigate } from "react-router-dom";
 
 export default function SetupApp(props) {
     const [isReady, setIsReady] = useState(true);
     const [message, setMessage] = useState(null);
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     useEffect(() => {
+        setupApplication();
         loadCurrency()
         loadLanguages()
     }, [])
@@ -26,6 +30,23 @@ export default function SetupApp(props) {
     const loadCurrency = () => {
         cache.setCurrency(portal_config.default_currency);
         cache.setCurrencyCode(portal_config.default_currency_code);
+    }
+
+    const setupApplication = async () => {
+        initLanguage();
+        await services.setupChannel({
+            storeKVFn: async (key, value) => {
+                saveDataIntoAsyncStore(key, value);
+            },
+            getKVFn: async (key) => {
+                return getData(key);
+            },
+            sessionInvalidCallback: () => {
+                logOut(true, navigate);
+            },
+            apiKey: connection.apiKey,
+            host: connection.server,
+        })
     }
 
     if (isReady) {
