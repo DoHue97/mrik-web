@@ -130,3 +130,18 @@ export const productsData = [
         content: '',
     },
 ]
+
+export const pricesData = [
+    {
+        code: 'PRICE01',
+        value: 300,
+    },
+    {
+        code: 'PRICE02',
+        value: 550,
+    },
+    {
+        code: 'PRICE02',
+        value: 700,
+    },
+]

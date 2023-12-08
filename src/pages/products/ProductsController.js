@@ -97,10 +97,15 @@ export default function ProductsController(props) {
     }
 
     const onSearch = async () => {
-        if(searchValue && searchValue.length > 1){
+        if (searchValue && searchValue.length > 1) {
             console.log("AAAA onSearch searchValue: ", searchValue)
-            await onLoadProducts({ size: 10, page: 1, search_value: searchValue})
+            await onLoadProducts({ size: 10, page: 1, search_value: searchValue })
         }
+    }
+
+    const onMangagerPrices = () => {
+        console.log("AAAA onMangagerPrices product: ", product);
+        navigate(config_path.product_prices.replace(':id', product.id), { state: { product: product } })
     }
 
     return (
@@ -119,6 +124,7 @@ export default function ProductsController(props) {
                 onDelete={onDelete}
                 onSearch={onSearch}
                 onHandleChange={onHandleChange}
+                onMangagerPrices={onMangagerPrices}
             />
             {confirm && confirm.show && <Confirm
                 isOpen={confirm.show}

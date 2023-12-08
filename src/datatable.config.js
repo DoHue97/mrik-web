@@ -53,3 +53,10 @@ export const productsTableConfig = [
     { key: 'name', label: 'product_name' },
     { key: '', label: '', align: align.right, action: true, actionIcon: MoreIcon, actionType: actionType.func, actionFuncName: 'onShowMenuActions' },
 ]
+
+export const productPricesTableConfig = [
+    { key: 'code', label: 'price_code' },
+    { key: 'description', label: 'price_desc' },
+    { key: 'value', label: 'price' },
+    { key: '', label: '', align: align.right, action: true, actionIcon: MoreIcon, actionType: actionType.func, actionFuncName: 'onShowMenuActions' },
+]

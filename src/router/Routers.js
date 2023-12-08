@@ -19,6 +19,7 @@ import AddEditProductController from "../pages/products/AddEditProductController
 import OrderDetailController from "../pages/orders/OrderDetailController";
 import DiscountsController from "../pages/discounts/DiscountsController";
 import ReportCustomerRevenueLevelController from "../pages/reports/ReportCustomerRevenueLevelController";
+import ProductPricesController from "../pages/product-prices/ProductPricesController";
 
 export default function Routers(props) {
     const navigate = useNavigate();
@@ -39,6 +40,7 @@ export default function Routers(props) {
             <Route path={config_path.dashboard} element={<DashboardPage />} />
             <Route path={config_path.users} element={<CheckPermission><UsersPage /></CheckPermission>} />
             <Route path={config_path.products} element={<CheckPermission><ProductsController /></CheckPermission>} />
+            <Route path={config_path.product_prices} element={<CheckPermission><ProductPricesController /></CheckPermission>} />
             <Route path={config_path.product_add} element={<CheckPermission><AddEditProductController /></CheckPermission>} />
             <Route path={config_path.product_edit} element={<CheckPermission><AddEditProductController /></CheckPermission>} />
             <Route path={config_path.orders} element={<CheckPermission><OrdersController /></CheckPermission>} />

@@ -175,4 +175,15 @@ export const vietnam = {
     upload_file_desc: 'Kéo thả hoặc nhấn để chọn file',
     enter_product_search_value: 'Nhập tên, mã sản phẩm',
     add_product: 'Thêm mới',
+
+    //prices
+    prices: 'Quản lý giá',
+    price: 'Giá',
+    price_desc: 'Mô tả',
+    price_code: 'Mã',
+    enter_price: 'Nhập giá',
+
+    save_success: 'Lưu thành công.',
+    save_unsuccess: 'Có lỗi xảy ra.',
+
 }

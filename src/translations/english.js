@@ -176,4 +176,14 @@ export const english = {
     upload_file_desc: "Drag 'n' drop some files here, or click to select files",
     enter_product_search_value: 'Enter name, code',
     add_product: 'Add Product',
+
+    //prices
+    prices: 'Prices',
+    price: 'Price',
+    price_desc: 'Description',
+    price_code: 'Code',
+    enter_price: 'Enter price',
+
+    save_success: 'Save record successfully.',
+    save_unsuccess: 'Save record failed.',
 }

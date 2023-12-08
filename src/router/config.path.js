@@ -12,6 +12,7 @@ export const config_path = {
     products: '/products',
     product_add: '/products/add',
     product_edit: '/products/edit/:id',
+    product_prices: '/products/:id/prices',
     offers: '/offers',
     offer_add: '/offers/new',
     offer_edit: '/offers/edit/:id',

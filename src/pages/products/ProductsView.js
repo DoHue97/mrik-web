@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ContainerCustom from '../../components/Container'
 import { Grid, Hidden, Popover, TablePagination, Typography, Stack, IconButton, Button, useTheme, TextField, Box } from "@mui/material";
-import { EditIcon, DeleteIcon, MoreIcon, SearchIcon } from "../../components/Icons";
+import { EditIcon, DeleteIcon, MoreIcon, SearchIcon, PriceTagIcon } from "../../components/Icons";
 import { useTranslation } from "react-i18next";
 import DataTable from "../../components/DataTable";
 import CardComponent from "../../components/Card";
@@ -16,6 +16,7 @@ export default function ProductsView(props){
     
     const menuActionItem = [
         { label: 'btn_edit', icon: <EditIcon />, onClick: props.onEdit, id: 'product_edit' },
+        { label: 'prices', icon: <PriceTagIcon />, onClick: props.onMangagerPrices, id: 'product_prices' },
         { label: 'btn_delete', icon: <DeleteIcon />, onClick: props.onDelete, id: 'product_delete' },
     ]
 

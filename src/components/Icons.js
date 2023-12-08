@@ -1,7 +1,7 @@
 import React from "react";
 import { RiMenuFill, RiBarChartBoxFill, RiNotification3Fill, RiTimeLine, RiCheckDoubleLine, RiShoppingCartFill, RiEyeOffLine, RiEyeLine,
     RiCloseLine, RiExpandUpDownLine, RiUser3Fill, RiMoreLine, RiEditLine, RiDeleteBinLine, RiBox3Fill, RiWallet3Fill, RiShieldUserLine, RiGiftFill, 
-    RiWalletFill, RiFileDownloadLine, RiSearch2Line, RiFileList2Fill, 
+    RiWalletFill, RiFileDownloadLine, RiSearch2Line, RiFileList2Fill, RiPercentFill, RiHomeGearFill, RiDatabaseFill, RiPriceTag3Line, 
 } from 'react-icons/ri';
 import { GetIconColor } from '../theme/main_style';
 
@@ -40,3 +40,7 @@ export const RequestWithDrawalIcon = (props) => { return <RiWalletFill color={pr
 export const FileDownloadIcon = (props) => { return <RiFileDownloadLine color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
 export const SearchIcon = (props) => { return <RiSearch2Line color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
 export const ReportsIcon = (props) => { return <RiFileList2Fill color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
+export const PercentFillIcon = (props) => { return <RiPercentFill color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
+export const HomeGearFillIcon = (props) => { return <RiHomeGearFill color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
+export const DatabaseFillIcon = (props) => { return <RiDatabaseFill color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
+export const PriceTagIcon = (props) => { return <RiPriceTag3Line color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
