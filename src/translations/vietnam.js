@@ -12,7 +12,7 @@ export const vietnam = {
     users: 'Quản lý tài khoản',
     orders: 'Quản lý đơn hàng',
     wallet: 'Quản lý ví',
-    request_withdrawal: 'Quản lý yêu cầu rút tiền',
+    request_money: 'Quản lý yêu cầu rút tiền',
     offers: 'Quản lý chương trình/chính sách ưu đãi',
     inventory: 'Quản lý xuất/nhập kho',
     discounts: 'Quản lý chiết khấu',
@@ -38,6 +38,8 @@ export const vietnam = {
     btn_add: 'Tạo mới',
     btn_save: 'Lưu',
     btn_search: 'Tìm kiếm',
+    btn_update: 'Cập nhật',
+    btn_view: 'Xem',
 
     delete_title: 'Xóa',
     delete_desc: 'Bạn có chắc muốn xóa {0} ?',
@@ -182,6 +184,25 @@ export const vietnam = {
     price_desc: 'Mô tả',
     price_code: 'Mã',
     enter_price: 'Nhập giá',
+    enter_price_code: 'Nhập mã',
+
+    //request draw
+    description: 'Mô tả',
+    amount: 'Số tiền',
+    note: 'Ghi chú',
+    state: 'Trạng thái',
+
+    approve: 'Duyệt',
+    approved: 'Đã duyệt',
+    reject: 'Từ chối',
+    rejectd: 'Đã từ chối',
+    transfer: 'Trừ tiền',
+    transferred: 'Đã trừ',
+    please_select: 'Chọn',
+
+    //inventory
+    inventory_code: 'Mã',
+    quantity: 'Số lượng',
 
     save_success: 'Lưu thành công.',
     save_unsuccess: 'Có lỗi xảy ra.',

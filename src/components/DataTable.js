@@ -131,7 +131,7 @@ function EnhancedTableContent(props) {
     return (
         <TableBody>
             {_dataTableSort.map((row, index) => (
-                <TableRow key={index} onClick={props.onShowDetail ? () => props.onShowDetail(row) : undefined}>
+                <TableRow key={index} sx={{cursor: props.onShowDetail ? 'pointer' : undefined}} onClick={props.onShowDetail ? () => props.onShowDetail(row) : undefined}>
                     {tableConfig.map((cell, index) => {
                         var value = getValue(row, cell.key);
                         if (!value && !cell.action) {
@@ -199,7 +199,8 @@ function EnhancedTableContent(props) {
                                 return (
                                     <TableCell key={index} align={cell.align}>
                                         <IconButton onClick={(e) => onClickAction(e, row)} sx={{
-                                            backgroundColor: 'transparent'
+                                            backgroundColor: 'transparent',
+                                            cursor: 'pointer'
                                         }}>{<Icon color={palette.grey['500']} />}</IconButton>
                                     </TableCell>
                                 )

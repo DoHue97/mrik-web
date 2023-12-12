@@ -14,12 +14,13 @@ import OffersController from "../pages/offers/OffersController";
 import AddEditOfferController from "../pages/offers/AddEditOfferController";
 import PageNotFound from "../pages/PageNotFound";
 import AccessDenied from "../pages/AccessDenied";
-import RequestWithDrawalController from "../pages/request-drawal/RequestWithDrawalController";
+import RequestMoneyController from "../pages/request-money/RequestMoneyController";
 import AddEditProductController from "../pages/products/AddEditProductController";
 import OrderDetailController from "../pages/orders/OrderDetailController";
 import DiscountsController from "../pages/discounts/DiscountsController";
 import ReportCustomerRevenueLevelController from "../pages/reports/ReportCustomerRevenueLevelController";
 import ProductPricesController from "../pages/product-prices/ProductPricesController";
+import InventoryAddController from "../pages/inventory/InventoryAddController";
 
 export default function Routers(props) {
     const navigate = useNavigate();
@@ -47,10 +48,11 @@ export default function Routers(props) {
             <Route path={config_path.orders_detail} element={<CheckPermission><OrderDetailController /></CheckPermission>} />
             <Route path={config_path.wallet} element={<CheckPermission><WalletController /></CheckPermission>} />
             <Route path={config_path.inventory} element={<CheckPermission><InventoryController /></CheckPermission>} />
+            <Route path={config_path.inventory_add} element={<CheckPermission><InventoryAddController /></CheckPermission>} />
             <Route path={config_path.offers} element={<CheckPermission><OffersController /></CheckPermission>} />
             <Route path={config_path.offer_add} element={<CheckPermission><AddEditOfferController /></CheckPermission>} />
             <Route path={config_path.offer_edit} element={<CheckPermission><AddEditOfferController /></CheckPermission>} />
-            <Route path={config_path.request_with_drawal} element={<CheckPermission><RequestWithDrawalController /></CheckPermission>} />
+            <Route path={config_path.request_money} element={<CheckPermission><RequestMoneyController /></CheckPermission>} />
             <Route path={config_path.discounts} element={<CheckPermission><DiscountsController /></CheckPermission>} />
             <Route path={config_path.report_customer_revenue_level} element={<CheckPermission><ReportCustomerRevenueLevelController /></CheckPermission>} />
             <Route path={config_path.page_not_found} element={<PageNotFound />} />

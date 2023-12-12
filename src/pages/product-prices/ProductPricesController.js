@@ -86,8 +86,8 @@ export default function ProductPricesController(props) {
 
     const onDeleteProcess = async (price) => {
         console.log("AAAA onDeleteProcess price: ", price);
+        setConfirm({})
         try {
-
         } catch (error) {
             console.log("AAAAA onDeleteProcess error: ", error)
         }
@@ -113,12 +113,16 @@ export default function ProductPricesController(props) {
                 onEdit={onEdit}
                 handleChangePage={handleChangePage}
                 handleChangeRowsPerPage={handleChangeRowsPerPage}
+                setPrice={setPrice}
             />
             {showAddEditPrice && <PriceAddEditController 
                 isOpen={showAddEditPrice}
                 price={price}
                 mode={mode}
-                onClose={() => setShowAddEditPrice(false)}
+                onClose={() => {
+                    setPrice(null);
+                    setShowAddEditPrice(false)
+                }}
             />}
         </>
     )

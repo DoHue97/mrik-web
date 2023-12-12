@@ -157,6 +157,7 @@ export default function OrdersController(props) {
                 orders={orders}
                 searchValue={searchValue}
                 state={state}
+                confirm={confirm}
                 handleChangePage={handleChangePage}
                 handleChangeRowsPerPage={handleChangeRowsPerPage}
                 setOrder={setOrder}
@@ -168,16 +169,6 @@ export default function OrdersController(props) {
                 setState={setState}
                 onReject={onReject}
             />
-            {confirm && confirm.show && <Confirm
-                isOpen={confirm.show}
-                onClose={confirm.onClose ? confirm.onClose : () => setConfirm(null)}
-                message={confirm.message}
-                title={confirm.title}
-                actionTitle={confirm.actionTitle}
-                closeTitle={confirm.closeTitle}
-                otherMessage={confirm.otherMessage}
-                onAction={confirm.onAction ? confirm.onAction : () => setConfirm(null)}
-            />}
         </>
     )
 }

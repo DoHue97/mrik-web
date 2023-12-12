@@ -1,7 +1,7 @@
 import { Grid, Hidden, InputAdornment, MenuItem, Select, TextField, Typography, useTheme, useThemeProps } from "@mui/material";
 import React, { useState } from "react";
 import { formatFloat, parseAPIFloat, parseFloat } from "../utils/utils";
-import t from '../utils/translateUtil'
+import { useTranslation } from "react-i18next";
 
 function TextFieldCustom({
     input: { name, onChange, value, type },
@@ -108,6 +108,7 @@ function SelectCustom({
     // console.log("AAAA keyName: ", keyName)
     // console.log("AAAA keyLabel: ", keyLabel)
     const { palette } = useTheme();
+    const { t } = useTranslation();
     if(!keyName) keyName = 'value';
     if(!keyLabel) keyLabel = 'label'
     return (
@@ -121,7 +122,7 @@ function SelectCustom({
                 </Grid>
             </Grid>
             <Grid xs={12} sm={12} item container direction="row" alignItems='center'>
-                {!valueSelect && <Grid xs={10} item><Typography >{placeholder ? placeholder : t("Please Select")}</Typography></Grid>}
+                {/* {!valueSelect && <Grid xs={10} item><Typography >{placeholder ? placeholder : t("please_select")}</Typography></Grid>} */}
                 {selectData && <Select
                     value={valueSelect} 
                     // renderValue={(selected) => (selected && (selected.name?selected.name:(selected.label?selected.label:valueSelect)))}
@@ -131,6 +132,7 @@ function SelectCustom({
                         if (onSelectedChange)
                             onSelectedChange(e)
                     }}
+                    placeholder={placeholder ? placeholder : t('please_select')}
                     // IconComponent={ArrowDownIcon}
                     displayEmpty={true}
                     disabled={!isEdit}

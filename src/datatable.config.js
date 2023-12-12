@@ -60,3 +60,19 @@ export const productPricesTableConfig = [
     { key: 'value', label: 'price' },
     { key: '', label: '', align: align.right, action: true, actionIcon: MoreIcon, actionType: actionType.func, actionFuncName: 'onShowMenuActions' },
 ]
+
+export const transactionsTableConfig = [
+    { key: 'name', label: 'name' },
+    { key: 'amount', label: 'amount' },
+    { key: 'description', label: 'description' },
+    { key: '', label: '', align: align.right, action: true, actionIcon: MoreIcon, actionType: actionType.func, actionFuncName: 'onShowMenuActions' },
+]
+
+export const inventoryTableConfig = [
+    { key: 'date', label: 'created_date' },
+    { key: 'code', label: 'inventory_code' },
+    { key: 'product.code', label: 'product_code' },
+    { key: 'name', label: 'product_name' },
+    { key: 'quantity', label: 'quantity' },
+    { key: '', label: '', align: align.right, action: true, actionIcon: MoreIcon, actionType: actionType.func, actionFuncName: 'onShowMenuActions' },
+]

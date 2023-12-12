@@ -12,7 +12,7 @@ export const english = {
     users: 'Users',
     orders: 'Orders',
     wallet: 'Wallet',
-    request_withdrawal: 'Request a with drawal',
+    request_money: 'Request money',
     offers: 'Offers',
     inventory: 'Inventory',
     discounts: 'Discounts',
@@ -38,6 +38,8 @@ export const english = {
     btn_add: 'Add',
     btn_save: 'Save',
     btn_search: 'Search',
+    btn_update: 'Update',
+    btn_view: 'View',
 
     delete_title: 'Delete',
     delete_desc: 'Are you sure delete {0} ?',
@@ -183,6 +185,25 @@ export const english = {
     price_desc: 'Description',
     price_code: 'Code',
     enter_price: 'Enter price',
+    enter_price_code: 'Enter code',
+
+    //request draw
+    description: 'Description',
+    amount: 'Amount',
+    note: 'Note',
+    state: 'State',
+
+    approve: 'Approve',
+    approved: 'Approved',
+    reject: 'Reject',
+    rejectd: 'Rejected',
+    transfer: 'Transfer',
+    transferred: 'Transferred',
+    please_select: 'Please select',
+
+    //inventory
+    inventory_code: 'Code',
+    quantity: 'Quantity',
 
     save_success: 'Save record successfully.',
     save_unsuccess: 'Save record failed.',

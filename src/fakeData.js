@@ -135,13 +135,33 @@ export const pricesData = [
     {
         code: 'PRICE01',
         value: 300,
+        description: '',
     },
     {
         code: 'PRICE02',
         value: 550,
+        description: '',
     },
     {
         code: 'PRICE02',
         value: 700,
+        description: '',
+    },
+]
+export const requestDrawData = [
+    {
+        name: 'Hue Do 01',
+        amount: 100000,
+        description: 'Rút tiền 01',
+    },
+    {
+        name: 'Hue Do 02',
+        amount: 200000,
+        description: 'Rút tiền 02',
+    },
+    {
+        name: 'Hue Do 03',
+        amount: 300000,
+        description: 'Rút tiền 03',
     },
 ]

@@ -36,7 +36,7 @@ export const ProductsIcon = (props) => { return <RiBox3Fill color={props.color ?
 export const WalletIcon = (props) => { return <RiWallet3Fill color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
 export const RolesIcon = (props) => { return <RiShieldUserLine color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
 export const OffersIcon = (props) => { return <RiGiftFill color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
-export const RequestWithDrawalIcon = (props) => { return <RiWalletFill color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
+export const RequestMoneyIcon = (props) => { return <RiWalletFill color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
 export const FileDownloadIcon = (props) => { return <RiFileDownloadLine color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
 export const SearchIcon = (props) => { return <RiSearch2Line color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}
 export const ReportsIcon = (props) => { return <RiFileList2Fill color={props.color ? props.color : GetIconColor().primary} size={props.size ? props.size : iconFontSize.xs} {...props} />}

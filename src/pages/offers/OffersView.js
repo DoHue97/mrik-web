@@ -45,7 +45,7 @@ export default function OffersView(props) {
     };
 
     return (
-        <ContainerCustom showProcessing={props.showProcessing} message={props.message}>
+        <ContainerCustom showProcessing={props.showProcessing} message={props.message} confirm={props.confirm}>
             {/* <Grid item xs={12} textAlign={'right'} my={1}>
                 <Button variant="contained" onClick={() => navigate(config_path.offer_add)}>+ {t('btn_add')}</Button>
             </Grid> */}

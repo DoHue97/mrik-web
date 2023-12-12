@@ -117,6 +117,7 @@ export default function UsersController(props) {
                 users={users}
                 confirm={confirm}
                 searchValue={searchValue}
+                confirm={confirm}
                 onEdit={onEdit}
                 onDelete={onDelete}
                 handleChangeRowsPerPage={handleChangeRowsPerPage}
@@ -127,16 +128,6 @@ export default function UsersController(props) {
                 onHandleChange={onHandleChange}
                 onSearch={onSearch}
             />
-            {confirm && confirm.show && <Confirm
-                isOpen={confirm.show}
-                onClose={confirm.onClose ? confirm.onClose : () => setConfirm(null)}
-                message={confirm.message}
-                title={confirm.title}
-                actionTitle={confirm.actionTitle}
-                closeTitle={confirm.closeTitle}
-                otherMessage={confirm.otherMessage}
-                onAction={confirm.onAction ? confirm.onAction : () => setConfirm(null)}
-            />}
             {showAddEditForm && <AddEditUserController
                 isOpen={showAddEditForm}
                 mode={mode}

@@ -22,7 +22,18 @@ export default function PriceAddEditView(props) {
                             <Grid item xs={12}>
                                 <Grid item xs={12} my={1}>
                                     <Field
-                                        name="price"
+                                        name="code"
+                                        label={t('price_code')}
+                                        component={TextFieldCustom}
+                                        placeholder={t('enter_price_code')}
+                                        isEdit={mode == 'add'}
+                                        isValid={true}
+                                        validate={validators.composeValidators(validators.required, validators.mustBeNumberRequired)}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} my={1}>
+                                    <Field
+                                        name="value"
                                         label={t('price')}
                                         component={TextFieldCustom}
                                         placeholder={t('enter_price')}
@@ -34,13 +45,13 @@ export default function PriceAddEditView(props) {
                                 <Grid item xs={12} my={1}>
                                     <Field
                                         name="description"
-                                        label={t('price')}
+                                        label={t('price_desc')}
                                         component={TextAreaCustom}
                                         isEdit={true}
                                     />
                                 </Grid>
                                 <Grid item xs={12} mt={4} container justifyContent={'center'}>
-                                    <Button fullWidth variant='contained' onClick={handleSubmit} >{t('btn_submit')}</Button>
+                                    <Button fullWidth variant='contained' onClick={handleSubmit} >{t('btn_save')}</Button>
                                 </Grid>
                             </Grid>
                         )

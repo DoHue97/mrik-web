@@ -6,6 +6,7 @@ export const config_path = {
     dashboard: '/dashboard',
     users: '/users',
     inventory: '/inventory',
+    inventory_add: '/inventory/add',
     orders: '/orders',
     orders_detail: '/orders/detail/:id',
     wallet: '/wallet',
@@ -18,7 +19,7 @@ export const config_path = {
     offer_edit: '/offers/edit/:id',
     page_not_found: '/page-not-found',
     access_denied: '/access-denied',
-    request_with_drawal: '/request-with-drawal',
+    request_money: '/request-money',
     discounts: '/discounts',
     report_customer_revenue_level: '/reports/customer-revenue-level',
 }

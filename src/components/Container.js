@@ -7,9 +7,10 @@ import Alert from './Alert';
 import Loading from './Loading';
 import SideBar from "./SideBar";
 import MenuBreadcrumbs from "./Breadcrumbs";
+import Confirm from "./Confirm";
 
 function ContainerCustom(props) {
-    const { children, other, sx, message, hideSideBar, showLoading, hideHeader, showBreadCrumbs, breadcrumbs } = props;
+    const { children, other, sx, message, hideSideBar, showLoading, hideHeader, showBreadCrumbs, breadcrumbs, confirm } = props;
     const theme = useTheme();
 
     return (
@@ -52,6 +53,16 @@ function ContainerCustom(props) {
                 otherMessage={message.otherMessage ? message.otherMessage : null}
                 onClose={message.callBackFn}
             />}
+            {confirm && confirm.show && <Confirm
+                isOpen={confirm.show}
+                onClose={confirm.onClose}
+                message={confirm.message}
+                title={confirm.title}
+                actionTitle={confirm.actionTitle}
+                closeTitle={confirm.closeTitle}
+                otherMessage={confirm.otherMessage}
+                onAction={confirm.onAction}
+            />}
             {showLoading && <Loading showLoading={showLoading} />}
         </>
     )
@@ -65,6 +76,7 @@ ContainerCustom.propTypes = {
     hideSideBar: PropTypes.bool,
     showBreadCrumbs: PropTypes.bool,
     breadcrumbs: PropTypes.array,
+    confirm: PropTypes.object,
 }
 
 export default ContainerCustom;

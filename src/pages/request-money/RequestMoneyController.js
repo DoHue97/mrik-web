@@ -1,25 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
-import { config_path } from "../../router/config.path";
-import InventoryView from "./InventoryView";
+import { requestDrawData } from "../../fakeData";
+import RequestMoneyUpdateController from "./RequestMoneyUpdateController";
+import RequestMoneyView from "./RequestMoneyView";
 
-export default function InventoryController(props) {
-    const { t } = useTranslation();
-    const navigate = useNavigate();
-
-    const [message, setMessage] = useState(null);
+export default function RequestMoneyController(props){
     const [showProcessing, setShowProcessing] = useState(false);
     const [confirm, setConfirm] = useState(null);
+    const [message, setMessage] = useState(null);
     const [transactions, setTransactions] = useState({
-        content: [],
+        content: requestDrawData,
         paging: {
             size: 10,
-            total: 0,
+            total: requestDrawData.length,
             page: 1,
         }
     });
     const [transaction, setTransaction] = useState(null);
+    const [showFormUpdate, setShowFormUpdate] = useState(false);
 
     useEffect(() => {
         onLoadData();
@@ -52,19 +49,28 @@ export default function InventoryController(props) {
         setMessage({ show: status, title: title, content: message, otherMessage, callBackFn: callBackFn ? callBackFn : () => setMessage({}) });
     }
 
-    const onAdd = () => {
-        navigate(config_path.inventory_add)
+    const onUpdate = () => {
+        setShowFormUpdate(true)
     }
 
-    return (
+    return(
         <>
-            <InventoryView
-                message={message}
-                showProcessing={showProcessing}
+            <RequestMoneyView 
                 confirm={confirm}
+                showProcessing={showProcessing}
+                message={message}
                 transactions={transactions}
-                onAdd={onAdd}
+                showFormUpdate={showFormUpdate}
+                setTransaction={setTransaction}
+                handleChangePage={handleChangePage}
+                handleChangeRowsPerPage={handleChangeRowsPerPage}
+                onUpdate={onUpdate}
             />
+            {showFormUpdate && <RequestMoneyUpdateController 
+                isOpen={showFormUpdate}
+                transaction={transaction}
+                onClose={() => setShowFormUpdate(false)}
+            />}
         </>
     )
 }

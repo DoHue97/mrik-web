@@ -60,7 +60,7 @@ export default function ProductPricesView(props) {
     };
 
     return (
-        <ContainerCustom showProcessing={props.showProcessing} message={props.message} showBreadCrumbs={true} breadcrumbs={breadcrumbs}>
+        <ContainerCustom showProcessing={props.showProcessing} message={props.message} showBreadCrumbs={true} breadcrumbs={breadcrumbs} confirm={props.confirm}>
             <Grid item xs={12}>
                 <Grid item xs={12} container spacing={1} my={1} alignItems={'center'} mb={4}>
                     <Box width={'100%'} textAlign={'right'}>

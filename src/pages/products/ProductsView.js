@@ -44,7 +44,7 @@ export default function ProductsView(props){
     };
 
     return(        
-        <ContainerCustom showProcessing={props.showProcessing} message={props.message}>
+        <ContainerCustom showProcessing={props.showProcessing} message={props.message} confirm={props.confirm}>
             <Grid item xs={12}>
                 <Grid item xs={12} container spacing={1} my={1} alignItems={'center'} mb={4}>
                     <Grid item xs={12} sm={9} container spacing={1} alignItems={'center'}>

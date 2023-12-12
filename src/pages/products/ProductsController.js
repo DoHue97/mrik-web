@@ -116,6 +116,7 @@ export default function ProductsController(props) {
                 products={products}
                 product={product}
                 searchValue={searchValue}
+                confirm={confirm}
                 handleChangePage={handleChangePage}
                 handleChangeRowsPerPage={handleChangeRowsPerPage}
                 setProduct={setProduct}
@@ -126,16 +127,6 @@ export default function ProductsController(props) {
                 onHandleChange={onHandleChange}
                 onMangagerPrices={onMangagerPrices}
             />
-            {confirm && confirm.show && <Confirm
-                isOpen={confirm.show}
-                onClose={confirm.onClose ? confirm.onClose : () => setConfirm(null)}
-                message={confirm.message}
-                title={confirm.title}
-                actionTitle={confirm.actionTitle}
-                closeTitle={confirm.closeTitle}
-                otherMessage={confirm.otherMessage}
-                onAction={confirm.onAction ? confirm.onAction : () => setConfirm(null)}
-            />}
         </>
     )
 }

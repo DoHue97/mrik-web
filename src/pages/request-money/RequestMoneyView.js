@@ -1,13 +1,13 @@
-import { Grid, Typography, Stack, Hidden, Popover, IconButton, TablePagination, Box, Button } from "@mui/material";
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import CardComponent from "../../components/Card";
 import ContainerCustom from '../../components/Container';
-import DataTable from "../../components/DataTable";
+import { Grid, Hidden, Popover, Stack, TablePagination, Typography, IconButton } from "@mui/material";
 import { EditIcon, MoreIcon } from "../../components/Icons";
-import { inventoryTableConfig } from "../../datatable.config";
+import DataTable from "../../components/DataTable";
+import CardComponent from "../../components/Card";
+import { useTranslation } from "react-i18next";
+import { transactionsTableConfig } from "../../datatable.config";
 
-export default function InventoryView(props) {
+export default function RequestWithDrawalView(props) {
     const { t } = useTranslation();
     const { transactions } = props;
     const [openMenu, setOpenMenu] = useState(null);
@@ -40,18 +40,14 @@ export default function InventoryView(props) {
         props.handleChangeRowsPerPage(value);
     };
 
+
     return (
-        <ContainerCustom message={props.message} showProcessing={props.showProcessing} confirm={props.confirm}>
+        <ContainerCustom message={props.message} showProcessing={props.showProcessing}>
             <Grid item xs={12}>
-                <Grid item xs={12} justifyContent={'flex-end'} mb={4}>
-                    <Box width={'100%'} textAlign={'right'}>
-                        <Button variant="contained" onClick={() => props.onAdd()}>+ {t('btn_add')}</Button>
-                    </Box>
-                </Grid>
                 <Grid item xs={12}>
                     <Hidden mdDown>
                         <DataTable
-                            tableConfig={inventoryTableConfig}
+                            tableConfig={transactionsTableConfig}
                             data={transactions.content}
                             enablePaging={true}
                             paging={transactions.paging}

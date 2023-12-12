@@ -1,11 +1,11 @@
-import { CartIcon, DashboardIcon, OffersIcon, ProductsIcon, UserIcon, WalletIcon, RequestWithDrawalIcon, ReportsIcon, PercentFillIcon, HomeGearFillIcon, DatabaseFillIcon } from "./components/Icons";
+import { CartIcon, DashboardIcon, OffersIcon, ProductsIcon, UserIcon, WalletIcon, RequestMoneyIcon, ReportsIcon, PercentFillIcon, HomeGearFillIcon, DatabaseFillIcon } from "./components/Icons";
 import { config_path } from "./router/config.path";
 
 
 export const menu = [
     { id: 'MENU_DASHBOARD', title: 'dashboard', route: config_path.dashboard, icon: <DashboardIcon />},
     { id: 'MENU_USERS', title: 'users', route: config_path.users, icon: <UserIcon />},
-    { id: 'MENU_REQUEST_WITHDRAWAL', title: 'request_withdrawal', route: config_path.request_with_drawal, icon: <RequestWithDrawalIcon />},
+    { id: 'MENU_REQUEST_MONEY', title: 'request_money', route: config_path.request_money, icon: <RequestMoneyIcon />},
     { id: 'MENU_OFFERS', title: 'offers', route: config_path.offers, icon: <OffersIcon />},
     { id: 'MENU_PRODUCTS', title: 'products', route: config_path.products, icon: <ProductsIcon />},
     { id: 'MENU_INVENTORY', title: 'inventory', route: config_path.inventory, icon: <HomeGearFillIcon />},
